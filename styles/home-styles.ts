@@ -1,0 +1,148 @@
+import { StyleSheet,ImageStyle,ViewStyle,TextStyle } from "react-native";
+interface HomeProps{
+    container:ViewStyle
+    topOptionsContainer:ViewStyle
+    mainBtnsOptions:ViewStyle
+    mainInfoAbout:ViewStyle
+    navbarContainer:ViewStyle
+    btnNavBarContainer:ViewStyle
+    btnMainOptionContainer:ViewStyle
+    btnsTopBox:ViewStyle
+    topTittleName:TextStyle
+    boxMainInfoDisplay:ViewStyle
+    bgTopFix:ViewStyle
+    titleCardBox:ViewStyle
+    infoCardBox:ViewStyle
+    boxInfoDisplay:ViewStyle
+    borxCardUserInfo:ViewStyle
+}
+const homeStyles : HomeProps = StyleSheet.create({
+    container:{
+        width:'100%',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    topOptionsContainer:{
+        width:'100%',
+        height:60,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        alignItems:'center',     
+        position:'relative'
+    },
+    topTittleName:{
+        width:'auto',
+        height:'auto',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
+        fontSize:18,
+        color:'#ffffff',
+        fontWeight:100
+    },
+    bgTopFix:{
+        width:'100%',
+        height:'3%',
+        position: 'absolute',
+        top: '0%',
+        left: '50%',
+        transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
+        backgroundColor:'#004481'
+    },
+    mainBtnsOptions:{
+        width:'95%',
+        height:'13%',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',   
+    },
+    mainInfoAbout:{
+        width:'95%',
+        height:'65%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'flex-start',
+        alignItems:'center',    
+        rowGap:20
+    },
+    boxMainInfoDisplay:{
+        width:'100%',
+        height:160,        
+        boxShadow:'2px 2px 5px 0pxrgba(0, 0, 0, 0.34)',
+        backgroundColor:'#ffffff',
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'column'
+    },
+    navbarContainer:{
+        width:'100%',
+        height:50,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-around',
+        alignItems:'center',        
+        backgroundColor:'#ffffff'
+    },
+    btnNavBarContainer:{
+        width:'18%',
+        height:'100%',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    btnMainOptionContainer:{
+        width:'22%',
+        height:'100%',      
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-around',
+        alignItems:'center'
+    },
+    btnsTopBox:{
+        width:'20%',
+        height:'100%',    
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'row'
+    },
+    titleCardBox:{
+        width:'90%',
+        height:'25%',        
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'flex-start'
+    },
+    infoCardBox:{
+        width:'90%',
+        height:'65%',       
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    boxInfoDisplay:{
+        width:'auto',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'space-around'
+    },
+    borxCardUserInfo:{
+        width:'auto',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'flex-start',
+        justifyContent:'space-between'
+    }
+})
+export default homeStyles
