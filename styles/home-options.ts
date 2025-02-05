@@ -22,6 +22,19 @@ interface HomeOptionProps{
     resumeInputBoxAmount:ViewStyle
     notAviableButton:ViewStyle
     resumeTitleBoxConcept:ViewStyle
+    boxAddNewAdresee:ViewStyle
+    titleAddNewAdresee:ViewStyle
+    boxAddNewAdreseeInfo:ViewStyle
+    inputBoxAddNewAdreseeInfo:ViewStyle
+    inputViewForAddNewAdreseeData:ViewStyle
+    checkAddNewAdreseeInfo:ViewStyle
+    aviableButton:ViewStyle
+    boxAddNewAdreseeExtraData:ViewStyle
+    boxAlertAboutNewAdresee:ViewStyle
+    addExtraInfoAboutNewAdresee:ViewStyle
+    boxToSaveData:ViewStyle
+    boxToAddAlias:ViewStyle
+    boxToSendNewAdreseeExtraData:ViewStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -32,6 +45,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         flexDirection:'column',
         justifyContent:'space-between',
         alignItems:'center',
+        backgroundColor:'#ffffff'
     },
     topTitleContainer:{
         width:'100%',
@@ -67,7 +81,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
     },
     detailsBox:{
         width:'100%',
@@ -75,7 +89,8 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        backgroundColor:'#f4f4f4'
     },
     titleBoxOrigin:{
         width:'100%',
@@ -171,12 +186,20 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         justifyContent:'flex-start',
         alignItems:'center',
         flexDirection:'row',
-        backgroundColor:'#ffffff'
+        backgroundColor:'#efefef'
     },
     notAviableButton:{
         width:140,
         height:50,
-        backgroundColor:'#9c9c9c',
+        backgroundColor:'#efefef',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',        
+    },
+    aviableButton:{
+        width:140,
+        height:50,
+        backgroundColor:'#55aee8',
         display:'flex',
         justifyContent:'center',
         alignItems:'center',        
@@ -196,6 +219,101 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'flex-start',
         alignItems:'center'
+    },
+    boxAddNewAdresee:{
+        width:'95%',
+        height:450,        
+        marginBottom:'auto',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    titleAddNewAdresee:{
+        width:'100%',
+        height:60,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        alignItems:'center',     
+        position:'relative',
+    },
+    boxAddNewAdreseeInfo:{
+        width:'100%',
+        height:'40%',        
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    inputBoxAddNewAdreseeInfo:{
+        width:'100%',
+        height:'70%',        
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'column'
+
+    },
+    inputViewForAddNewAdreseeData:{
+        width:'100%',
+        height:50,
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        borderBottomWidth:2,
+        borderBottomColor:'#cccccc',
+        backgroundColor:'#f4f4f4'
+    },
+    checkAddNewAdreseeInfo:{
+        width:'100%',
+        height:'30%',        
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-around',
+        alignItems:'center'
+    },
+    boxAddNewAdreseeExtraData:{
+        width:'95%',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between'
+    },
+    boxAlertAboutNewAdresee:{
+        width:'100%',
+        height:'20%',
+        borderWidth:1,
+        borderColor:'#000000',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        flexDirection:'column'
+    },
+    addExtraInfoAboutNewAdresee:{
+        width:'100%',
+        height:'25%',
+        borderWidth:1,
+        borderColor:'#000000'
+    },
+    boxToSaveData:{
+        width:'100%',
+        height:'10%',
+        borderWidth:1,
+        borderColor:'#000000'
+    },
+    boxToAddAlias:{
+        width:'100%',
+        height:'10%',
+        borderWidth:1,
+        borderColor:'#000000'
+    },
+    boxToSendNewAdreseeExtraData:{
+        width:'100%',
+        height:'20%',
+        borderWidth:1,
+        borderColor:'#000000'
     }
+
 })
 export default homeOptionStyles

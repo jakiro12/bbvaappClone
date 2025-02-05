@@ -5,8 +5,8 @@ const DownNavBar:React.FC<{routePath:string}>=({routePath})=>{
     return(
         <View style={styles.navbarContainer}>
         <View style={styles.btnNavBarContainer}>
-             <Image source={require('../assets/images/inicio.png')} resizeMode="contain" style={{width:20,height:20, tintColor: routePath === '/home/home' ? '#ff0000' : '#5e5e5e'}}/>                     
-             <Text style={{fontSize:12,color:routePath === '/home/home' ? '#ff0000' : '#5e5e5e'}}>Inicio</Text>
+             <Image source={require('../assets/images/inicio.png')} resizeMode="contain" style={{width:20,height:20, tintColor: routePath === '/home/home' ? '#003f7d' : '#5e5e5e'}}/>                     
+             <Text style={{fontSize:12,color:routePath === '/home/home' ? '#003f7d' : '#5e5e5e'}}>Inicio</Text>
         </View>
         <View style={styles.btnNavBarContainer}>
          <Image source={require('../assets/images/salud.png')} resizeMode="contain" style={{width:20,height:20}}/>                     
