@@ -3,6 +3,7 @@ import styles from '../../../../styles/home-options'
 import React, { useState } from "react"
 import { Pressable } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
+import { router } from "expo-router"
 interface CheckAdreseeProps{
     setAdreseeStatus:(value:string | null)=> void
 }
@@ -64,7 +65,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             <View style={styles.boxToSendNewAdreseeExtraData}> 
                 <Text>El codigo de seguridad para realizar esta operacion se generara de forma automatica al dar click en continuar</Text>
                 <TouchableOpacity 
-                    onPress={()=>setAdreseeStatus('find')}
+                    onPress={()=>router.push('/home/transfer/adresee/amount/amount')}
                     style={false ?  styles.aviableButton  :styles.notAviableButton}>
                     <Text style={{fontSize:18,fontWeight:'bold',color:false ? '#ffffff' : '#dbdbdb'}}>Continuar</Text>
                 </TouchableOpacity>

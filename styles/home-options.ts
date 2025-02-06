@@ -37,6 +37,7 @@ interface HomeOptionProps{
     boxToSendNewAdreseeExtraData:ViewStyle
     checkboxBase:ViewStyle
     checkboxChecked:ViewStyle
+    boxAmountScreen:ViewStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -337,6 +338,16 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
       checkboxChecked: {
         backgroundColor: '#075b99',
       },
+      boxAmountScreen:{
+        width:'100%',
+        height:'90%',
+        borderWidth:1,
+        borderColor:'#000000',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'space-between'
+      }
 
 })
 export default homeOptionStyles

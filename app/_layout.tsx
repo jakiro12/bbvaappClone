@@ -13,6 +13,7 @@ export default function RootLayout() {
         <Stack.Screen name="home/home" options={{ headerShown: false }} />
         <Stack.Screen name="home/transfer/transfer" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:1000}} />
         <Stack.Screen name="home/transfer/adresee/adresee" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:1000}} />
+        <Stack.Screen name="home/transfer/adresee/amount/amount" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:1000}} />
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 

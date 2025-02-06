@@ -57,7 +57,7 @@ const TransferMoneyTo=()=>{
                     </View>
                 </View>
                 <View style={styles.boxAmount}>
-                <View style={styles.resumeTitleBoxAmount}>
+                    <View style={styles.resumeTitleBoxAmount}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>IMPORTE</Text>
                         <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(3 de 4)</Text>
                     </View>
