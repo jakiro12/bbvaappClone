@@ -35,6 +35,8 @@ interface HomeOptionProps{
     boxToSaveData:ViewStyle
     boxToAddAlias:ViewStyle
     boxToSendNewAdreseeExtraData:ViewStyle
+    checkboxBase:ViewStyle
+    checkboxChecked:ViewStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -292,28 +294,49 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
     },
     addExtraInfoAboutNewAdresee:{
         width:'100%',
-        height:'25%',
-        borderWidth:1,
-        borderColor:'#000000'
+        height:'25%',        
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'flex-start',
+        flexDirection:'column'
     },
     boxToSaveData:{
         width:'100%',
-        height:'10%',
-        borderWidth:1,
-        borderColor:'#000000'
+        height:'10%',     
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'flex-start',
+        alignItems:'center'
     },
     boxToAddAlias:{
         width:'100%',
-        height:'10%',
-        borderWidth:1,
-        borderColor:'#000000'
+        height:'10%',      
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'flex-start',
+        alignItems:'center'
     },
     boxToSendNewAdreseeExtraData:{
         width:'100%',
-        height:'20%',
-        borderWidth:1,
-        borderColor:'#000000'
-    }
+        height:'20%',        
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    checkboxBase: {
+        width: 45,
+        height: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        borderWidth: 2,
+        borderColor: '#000000',
+        backgroundColor: 'transparent',
+      },
+      checkboxChecked: {
+        backgroundColor: '#075b99',
+      },
 
 })
 export default homeOptionStyles
