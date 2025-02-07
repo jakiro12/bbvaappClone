@@ -1,8 +1,11 @@
 import { router } from "expo-router"
-import { Text, TouchableOpacity, View } from "react-native"
+import { Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from '../../../../../../styles/home-options'
+import { BankContext } from "@/app/_layout";
+import { useContext } from "react";
 
 const AddReference=()=>{
+    const {newTransfer,setNewTransfer }: any = useContext(BankContext);
     return(
         <>
         <View style={{width:'100%',height:'100%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>                
@@ -20,10 +23,16 @@ const AddReference=()=>{
                                 <Text style={{fontSize:14,fontWeight:100,marginLeft:10}}>(4 de 4)</Text>
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
-                                <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Referencia</Text>
+                                <TextInput 
+                                    style={{width:'100%',height:'100%'}}
+                                    placeholder="Referencia"
+                                />
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
-                                <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Concepto</Text>
+                                <TextInput 
+                                    style={{width:'100%',height:'100%'}}
+                                    placeholder="Concepto"
+                                />
                             </View>
                             <TouchableOpacity style={styles.notAviableButton}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>

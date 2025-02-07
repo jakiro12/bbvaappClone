@@ -294,8 +294,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         flexDirection:'column'
     },
     addExtraInfoAboutNewAdresee:{
-        width:'100%',
-        height:'25%',        
+        width:'100%',                
         display:'flex',
         justifyContent:'space-between',
         alignItems:'flex-start',

@@ -1,9 +1,35 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Image, Keyboard, Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from '../../../../../styles/home-options'
 import { router } from "expo-router"
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { TransferData } from "@/constants/stateType"
+import { BankContext } from "@/app/_layout"
 
 const AmountOfMoneyToSend=()=>{
+    const {newTransfer,setNewTransfer }: any = useContext(BankContext);
+    const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
+    const handleAmountNumberChange = (text: string) => {
+        setNewTransfer((prev:TransferData) => ({ ...prev, amount_to_send: text }));
+        };
+    useEffect(() => {
+            const keyboardDidShowListener = Keyboard.addListener(
+              "keyboardDidShow",
+              () => {
+                setKeyboardVisible(true);
+              }
+            );    
+            const keyboardDidHideListener = Keyboard.addListener(
+              "keyboardDidHide",
+              () => {
+                setKeyboardVisible(false);
+              }
+            );
+        
+            return () => {
+              keyboardDidShowListener.remove();
+              keyboardDidHideListener.remove();
+            };
+          }, []);
     return(
         <>
                 <View style={styles.topTitleContainer}>
@@ -23,8 +49,10 @@ const AmountOfMoneyToSend=()=>{
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
                                 <TextInput 
-
+                                    onChangeText={handleAmountNumberChange}
+                                    style={{width:'100%',height:'100%'}}
                                     placeholder="Importe"
+                                    keyboardType="number-pad"
                                 />
                             </View>
                             <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
@@ -33,7 +61,7 @@ const AmountOfMoneyToSend=()=>{
                             </View>
                             <TouchableOpacity 
                                 onPress={()=>router.push('/home/transfer/adresee/amount/reference/reference')}
-                                style={styles.notAviableButton}>
+                                style={newTransfer.amount_to_send.length > 0 ? styles.aviableButton : styles.notAviableButton}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
                             </TouchableOpacity>
                         </View>                                          
