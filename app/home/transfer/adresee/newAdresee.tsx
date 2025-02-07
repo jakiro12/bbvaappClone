@@ -1,16 +1,19 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from '../../../../styles/home-options'
+import { BankContext } from "@/app/_layout"
+import { TransferData } from "@/constants/stateType"
 
 interface NewAdreseeProps{
     setAdreseeStatus:(value:string | null)=> void
 }
 
 const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
-    const[numberAddIt,setNumberAddIt]=useState<string>('')
-    const onChangeNumberValue=(value:string)=>{
-        setNumberAddIt(value)
-    }
+    const {newTransfer,setNewTransfer }: any = useContext(BankContext);
+    const handleAccountNumberChange = (text: string) => {
+        setNewTransfer((prev:TransferData) => ({ ...prev, account_number: text }));
+      };
+    
     return(
         <View style={styles.boxAddNewAdresee}>
             <View style={styles.titleAddNewAdresee}>
@@ -31,7 +34,8 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                         <TextInput
                             style={{width:'75%',height:'100%'}}
                             keyboardType="number-pad"
-                            onChangeText={(text)=>onChangeNumberValue(text)} 
+                            value={newTransfer.account_number}
+                            onChangeText={handleAccountNumberChange} 
                             placeholder="ingresar"/>
                         <View style={{width:'25%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
                             <TouchableOpacity>
@@ -51,8 +55,8 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
             <View style={styles.checkAddNewAdreseeInfo}>
                 <TouchableOpacity 
                     onPress={()=>setAdreseeStatus('find')}
-                    style={numberAddIt.length > 12 ?  styles.aviableButton  :styles.notAviableButton}>
-                    <Text style={{fontSize:18,fontWeight:'bold',color:numberAddIt.length > 0 ? '#ffffff' : '#dbdbdb'}}>Buscar</Text>
+                    style={newTransfer.account_number.length > 12 ?  styles.aviableButton  :styles.notAviableButton}>
+                    <Text style={{fontSize:18,fontWeight:'bold',color:newTransfer.account_number.length > 12 ? '#ffffff' : '#dbdbdb'}}>Buscar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{width:'auto',height:'auto'}}>
                     <Text style={{color:'#55aee8',fontWeight:'bold',fontSize:18}}>Elegir otro destino</Text>

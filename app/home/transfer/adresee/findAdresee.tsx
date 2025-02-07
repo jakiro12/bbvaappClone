@@ -1,14 +1,20 @@
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native"
 import styles from '../../../../styles/home-options'
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Pressable } from "react-native"
-import { Ionicons } from "@expo/vector-icons"
+import { AntDesign, Ionicons } from "@expo/vector-icons"
 import { router } from "expo-router"
+import { BankContext } from "@/app/_layout"
+import { TransferData } from "@/constants/stateType"
 interface CheckAdreseeProps{
     setAdreseeStatus:(value:string | null)=> void
 }
 const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
     const [checked, setChecked] = useState<boolean>(false);
+    const {newTransfer,setNewTransfer }: any = useContext(BankContext);
+    const handleInputChange = (key: keyof TransferData, value: string | boolean) => {
+        setNewTransfer((prev: TransferData) => ({ ...prev, [key]: value }))
+      }    
 
     return(
         <View style={styles.boxAddNewAdreseeExtraData}>
@@ -27,13 +33,16 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             </View>
             <View style={styles.addExtraInfoAboutNewAdresee}> 
                 <Text style={{color:'#9c9c9c'}}>Numero de cuenta</Text>
-                <Text>Numero que anterior ej: 123456780</Text>
-                <TouchableOpacity style={styles.inputViewForAddNewAdreseeData}>
+                <Text>{newTransfer.account_number}</Text>
+                <TouchableOpacity 
+                    style={styles.inputViewForAddNewAdreseeData}>
                     <Text style={{marginLeft:10}}>Banco/Entidad</Text>
-                    <Text>L</Text>
+                    <AntDesign name="down" size={24} color="black" style={{marginRight:20}}/>
                 </TouchableOpacity>
                 <View style={styles.inputViewForAddNewAdreseeData}>
                      <TextInput
+                        value={newTransfer.adresee_name}
+                        onChangeText={(text) => handleInputChange("adresee_name", text)} 
                         placeholder="Nombre del destinatario"/>
                 </View>
                 <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
@@ -44,10 +53,10 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             <View style={styles.boxToSaveData}> 
             <Pressable
                         role="checkbox"
-                        aria-checked={checked}
-                        style={[styles.checkboxBase, checked && styles.checkboxChecked]}
-                        onPress={() => setChecked(!checked)}>
-                        {checked && <Ionicons name="checkmark" size={40} color="white" />}
+                        aria-checked={newTransfer.save_data}
+                        style={[styles.checkboxBase, newTransfer.save_data && styles.checkboxChecked]}
+                        onPress={() => handleInputChange("save_data",!newTransfer.save_data)}>
+                        {newTransfer.save_data && <Ionicons name="checkmark" size={40} color="white" />}
                  </Pressable>
                  <View style={{width:'70%',marginLeft:10,height:'auto'}}>
                     <Text style={{fontSize:20}}>
@@ -59,6 +68,8 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             <View style={styles.boxToAddAlias}>
                 <View style={[styles.inputViewForAddNewAdreseeData,{backgroundColor:'#ffffff'}]}>
                      <TextInput
+                        onChangeText={(text)=>handleInputChange("alias_adresee",text)}
+                        value={newTransfer.alias_adresee}
                         placeholder="Alias del contacto"/>
                 </View>
             </View>
