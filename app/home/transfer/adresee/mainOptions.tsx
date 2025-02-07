@@ -30,8 +30,8 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
                     <Text style={{color:'#55aee8',fontWeight:'bold',fontSize:18,marginLeft:10}}>Nuevo</Text>
                 </TouchableOpacity>
                 <View style={styles.resumeActionsAdreseeDescription}>
-                    <Image source={require('../../../../assets/images/account.png')} style={{width:40,height:40}} resizeMode="cover"/>
-                    <Text style={{color:'#55aee8',fontWeight:'bold',fontSize:18,marginLeft:10}}>Mis cuentas y Tarjetas</Text>
+                    <Image source={require('../../../../assets/images/account.png')} style={{width:40,height:40,opacity:0.5}} resizeMode="cover"/>
+                    <Text style={{color:'#55aee8',fontWeight:'bold',fontSize:18,marginLeft:10,opacity:0.5}}>Mis cuentas y Tarjetas</Text>
                 </View>
                 <View style={styles.resumeActionsAdreseeDescription}>
                     <Image source={require('../../../../assets/images/contact.png')} style={{width:40,height:40}} resizeMode="cover"/>

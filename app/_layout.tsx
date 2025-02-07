@@ -1,13 +1,39 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import 'react-native-reanimated';
+interface TransferData{
+  account_number:string
+    bank_name:string
+    adresee_name:string
+    save_data:boolean
+    alias_adresee:string
+    amount_to_send:string
+    reference:string
+    concept:string
+}
+interface BankContextType {
+  newTransfer: TransferData;
+  setNewTransfer: React.Dispatch<React.SetStateAction<TransferData>>;
+}
 
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+export const BankContext=React.createContext<BankContextType | undefined>(undefined)
 
 
 export default function RootLayout() {
-  
-
+  const[newTransfer,setNewTransfer]=useState<TransferData>({
+    account_number:'',
+    bank_name:'',
+    adresee_name:'',
+    save_data:true,
+    alias_adresee:'',
+    amount_to_send:'',
+    reference:'',
+    concept:''
+  })
   return (
+    <BankContext.Provider value={{newTransfer,setNewTransfer}}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="home/home" options={{ headerShown: false }} />
@@ -18,5 +44,6 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 
+    </BankContext.Provider>
   );
 }

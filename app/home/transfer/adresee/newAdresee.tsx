@@ -29,6 +29,7 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={styles.inputViewForAddNewAdreseeData}>
                         <TextInput
+                            style={{width:'75%',height:'100%'}}
                             keyboardType="number-pad"
                             onChangeText={(text)=>onChangeNumberValue(text)} 
                             placeholder="ingresar"/>
