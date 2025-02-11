@@ -22,7 +22,7 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 </Text>
                 <TouchableOpacity
                     onPress={()=>setAdreseeStatus(null)}>
-                    <Text style={{fontSize:20}}>X</Text>
+                     <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20}} resizeMode="cover"/>
                 </TouchableOpacity>
             </View>
             <View style={styles.boxAddNewAdreseeInfo}>
@@ -32,17 +32,17 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={styles.inputViewForAddNewAdreseeData}>
                         <TextInput
-                            style={{width:'75%',height:'100%'}}
+                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length > 12 ? '#f4f4f4' :'#ff00009c'}}
                             keyboardType="number-pad"
                             value={newTransfer.account_number}
                             onChangeText={handleAccountNumberChange} 
                             placeholder="ingresar"/>
                         <View style={{width:'25%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
-                            <TouchableOpacity>
-                                <Text>X</Text>
+                            <TouchableOpacity style={{height:'100%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor: newTransfer.account_number.length > 12 ? '#f4f4f4' :'#ff00009c'}}>
+                                <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20,tintColor: newTransfer.account_number.length > 12 ? '#004481' :'#ff0000'}} resizeMode="cover"/>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Text>B</Text>
+                            <TouchableOpacity style={{height:'100%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#004481'}}>
+                                <Image source={require('../../../../assets/images/lupa.png')} style={{width:30,height:30}} resizeMode="cover"/>
                             </TouchableOpacity>
                         </View>
                     </View>

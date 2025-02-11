@@ -11,6 +11,7 @@ const AmountOfMoneyToSend=()=>{
     const handleAmountNumberChange = (text: string) => {
         setNewTransfer((prev:TransferData) => ({ ...prev, amount_to_send: text }));
         };
+    //#d0e9fd
     useEffect(() => {
             const keyboardDidShowListener = Keyboard.addListener(
               "keyboardDidShow",
@@ -47,13 +48,16 @@ const AmountOfMoneyToSend=()=>{
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>IMPORTE</Text>
                                 <Text style={{fontSize:14,fontWeight:100,marginLeft:10}}>(3 de 4)</Text>
                             </View>
-                            <View style={styles.resumeInputBoxAmount}>
+                            <View style={[styles.resumeInputBoxAmount,{position:'relative'}]}>
                                 <TextInput 
                                     onChangeText={handleAmountNumberChange}
-                                    style={{width:'100%',height:'100%'}}
+                                    style={{width:'100%',height:'100%',paddingLeft:15}}
                                     placeholder="Importe"
                                     keyboardType="number-pad"
                                 />
+                                {newTransfer.amount_to_send.length > 0 ?
+                                <Image source={require('../../../../../assets/images/dolar.png')} resizeMode="contain" style={styles.priceSymbol}/> : null
+                            }
                             </View>
                             <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
                                 <Image source={require('../../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>

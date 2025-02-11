@@ -54,8 +54,8 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             </View>
             {isKeyboardVisible === false ? 
                 <View style={styles.boxAlertAboutNewAdresee}>
-                    <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>                
-                    <Text>No hemos encontrado los datos del destinatario. Completa la informacion para realizar la transferencia</Text>
+                    <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20,marginBottom:20}}/>                
+                    <Text style={{width:'90%',height:'auto',textAlign:'center'}}>No hemos encontrado los datos del destinatario. Completa la informacion para realizar la transferencia</Text>
                 </View>
                 : null}                
             <View style={[styles.addExtraInfoAboutNewAdresee,{height:isKeyboardVisible ? '45%' : '25%',}]}> 

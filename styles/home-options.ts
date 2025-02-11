@@ -38,6 +38,7 @@ interface HomeOptionProps{
     checkboxBase:ViewStyle
     checkboxChecked:ViewStyle
     boxAmountScreen:ViewStyle
+    priceSymbol:ImageStyle    
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -285,13 +286,12 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
     },
     boxAlertAboutNewAdresee:{
         width:'100%',
-        height:'20%',
-        borderWidth:1,
-        borderColor:'#000000',
+        height:'20%',        
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        flexDirection:'column'
+        flexDirection:'column',
+        backgroundColor:'#d0e9fd'
     },
     addExtraInfoAboutNewAdresee:{
         width:'100%',                
@@ -322,7 +322,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
-        alignItems:'center'
+        alignItems:'center',
     },
     checkboxBase: {
         width: 45,
@@ -345,7 +345,16 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
         marginBottom:'auto'
-      }
+      },
+      priceSymbol:{    
+        width:18,
+        height:18,
+        position: 'absolute',      
+        top: '50%',                
+        left: 10,                
+        transform: [{ translateX: '-50%' }, { translateY: '-50%' }],        
+        tintColor:'#000000'
+    },
 
 })
 export default homeOptionStyles
