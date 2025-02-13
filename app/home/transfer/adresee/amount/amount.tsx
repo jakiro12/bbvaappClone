@@ -11,7 +11,6 @@ const AmountOfMoneyToSend=()=>{
     const handleAmountNumberChange = (text: string) => {
         setNewTransfer((prev:TransferData) => ({ ...prev, amount_to_send: text }));
         };
-    //#d0e9fd
     useEffect(() => {
             const keyboardDidShowListener = Keyboard.addListener(
               "keyboardDidShow",
@@ -38,7 +37,7 @@ const AmountOfMoneyToSend=()=>{
                     <TouchableOpacity 
                         style={styles.cancelBtnTop}
                         onPress={()=>router.back()}>
-                        <Text style={{color:'#ffffff',fontSize:20}}>X</Text>
+                        <Image source={require('../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                        
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxAmountScreen}>
@@ -60,7 +59,7 @@ const AmountOfMoneyToSend=()=>{
                             }
                             </View>
                             <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
-                                <Image source={require('../../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>
+                                <Image source={require('../../../../../assets/images/alert.png')} resizeMode="cover" style={{width:20,height:20}}/>
                                 <Text style={{fontSize:14,marginLeft:5}}>Dispones en tu cuenta un saldo de  $1,338.33</Text>
                             </View>
                             <TouchableOpacity 

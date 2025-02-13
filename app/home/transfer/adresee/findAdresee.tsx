@@ -19,7 +19,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
       }    
       const handleSelectBank = (bankName: string) => {
         handleInputChange("bank_name", bankName);
-        setModalVisible(false); // Cierra el modal después de seleccionar un banco
+        setModalVisible(false);
     }
       useEffect(() => {
         const keyboardDidShowListener = Keyboard.addListener(
@@ -40,7 +40,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
           keyboardDidHideListener.remove();
         };
       }, []);
-      let banks=['Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2',]
+      let banks=['Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2','Banco1','Banco2']
     return(
         <View style={styles.boxAddNewAdreseeExtraData}>
             <View style={styles.titleAddNewAdresee}>
@@ -49,7 +49,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                 </Text>
                 <TouchableOpacity
                     onPress={()=>setAdreseeStatus(null)}>
-                    <Text style={{fontSize:20}}>X</Text>
+                    <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20}} resizeMode="cover"/>                    
                 </TouchableOpacity>
             </View>
             {isKeyboardVisible === false ? 
@@ -62,13 +62,15 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                 <Text style={{color:'#9c9c9c'}}>Numero de cuenta</Text>
                 <Text>{newTransfer.account_number}</Text>
                 <TouchableOpacity 
+                    activeOpacity={1}
                     onPress={()=>setModalVisible(true)}
                     style={styles.inputViewForAddNewAdreseeData}>
-                    <Text style={{marginLeft:10}}>Banco/Entidad</Text>
+                    <Text style={{marginLeft:10}}>{newTransfer.bank_name.length === 0 ? "Banco/Entidad" : newTransfer.bank_name}</Text>
                     <AntDesign name="down" size={24} color="black" style={{marginRight:20}}/>
                 </TouchableOpacity>
                 <View style={styles.inputViewForAddNewAdreseeData}>
                      <TextInput
+                        style={{width:'100%',height:'100%'}}
                         value={newTransfer.adresee_name}
                         onChangeText={(text) => handleInputChange("adresee_name", text)} 
                         placeholder="Nombre del destinatario"/>
@@ -96,6 +98,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             <View style={styles.boxToAddAlias}>
                 <View style={[styles.inputViewForAddNewAdreseeData,{backgroundColor:'#ffffff'}]}>
                      <TextInput
+                        style={{width:'100%',height:'100%'}}
                         onChangeText={(text)=>handleInputChange("alias_adresee",text)}
                         value={newTransfer.alias_adresee}
                         placeholder="Alias del contacto"/>
@@ -121,29 +124,18 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                 onRequestClose={() => setModalVisible(false)} // Cierra el modal al presionar fuera de él
             >
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-                    <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>Selecciona un banco</Text>
-                    <ScrollView style={{ width: '100%' }}>
+                   
+                    <ScrollView style={{ width: '100%'}} showsVerticalScrollIndicator={false}>
                         {banks.map((bank, index) => (
                             <TouchableOpacity
                                 key={index}
                                 style={{ padding: 15, backgroundColor: '#f0f0f0', marginBottom: 5, borderRadius: 5 }}
-                                onPress={() => handleSelectBank(bank)} // Al seleccionar, se guarda el banco y cierra el modal
+                                onPress={() => handleSelectBank(bank)} 
                             >
                                 <Text>{bank}</Text>
                             </TouchableOpacity>
                         ))}
-                    </ScrollView>
-                    <TouchableOpacity
-                        onPress={() => setModalVisible(false)}
-                        style={{
-                            marginTop: 20,
-                            padding: 10,
-                            backgroundColor: '#55aee8',
-                            borderRadius: 5,
-                        }}
-                    >
-                        <Text style={{ color: 'white' }}>Cerrar</Text>
-                    </TouchableOpacity>
+                    </ScrollView>                   
                 </View>
             </Modal>
         </View>

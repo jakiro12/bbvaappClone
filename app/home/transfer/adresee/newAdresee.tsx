@@ -13,7 +13,9 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
     const handleAccountNumberChange = (text: string) => {
         setNewTransfer((prev:TransferData) => ({ ...prev, account_number: text }));
       };
-    
+    const cleanAccountNumberChange = () => {
+        setNewTransfer((prev:TransferData) => ({ ...prev, account_number: "" }));
+      };
     return(
         <View style={styles.boxAddNewAdresee}>
             <View style={styles.titleAddNewAdresee}>
@@ -32,14 +34,17 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={styles.inputViewForAddNewAdreseeData}>
                         <TextInput
-                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length > 12 ? '#f4f4f4' :'#ff00009c'}}
+                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
                             keyboardType="number-pad"
                             value={newTransfer.account_number}
                             onChangeText={handleAccountNumberChange} 
                             placeholder="ingresar"/>
                         <View style={{width:'25%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
-                            <TouchableOpacity style={{height:'100%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor: newTransfer.account_number.length > 12 ? '#f4f4f4' :'#ff00009c'}}>
-                                <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20,tintColor: newTransfer.account_number.length > 12 ? '#004481' :'#ff0000'}} resizeMode="cover"/>
+                            <TouchableOpacity 
+                                onPress={cleanAccountNumberChange}
+                                activeOpacity={1}
+                                style={{height:'100%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}>
+                                <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20,tintColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#004481'}} resizeMode="cover"/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{height:'100%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#004481'}}>
                                 <Image source={require('../../../../assets/images/lupa.png')} style={{width:30,height:30}} resizeMode="cover"/>
