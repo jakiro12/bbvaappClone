@@ -43,7 +43,7 @@ const AddReference=()=>{
                                 />
                             </View>
                             <TouchableOpacity 
-                                onPress={()=>console.log(newTransfer)}
+                                onPress={()=>router.push('/movement/current')}
                                 style={styles.notAviableButton}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
                             </TouchableOpacity>
