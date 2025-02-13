@@ -3,9 +3,13 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from '../../../../../../styles/home-options'
 import { BankContext } from "@/app/_layout";
 import { useContext } from "react";
+import { TransferData } from "@/constants/stateType";
 
 const AddReference=()=>{
     const {newTransfer,setNewTransfer }: any = useContext(BankContext);
+    const handleInputChange = (key: keyof TransferData, value: string | boolean) => {
+            setNewTransfer((prev: TransferData) => ({ ...prev, [key]: value }))
+          }   
     return(
         <>
         <View style={{width:'100%',height:'100%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>                
@@ -24,17 +28,23 @@ const AddReference=()=>{
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
                                 <TextInput 
+                                    onChangeText={(text) => handleInputChange("reference", text)} 
                                     style={{width:'100%',height:'100%'}}
                                     placeholder="Referencia"
+                                    value={newTransfer.reference}
                                 />
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
                                 <TextInput 
+                                    onChangeText={(text) => handleInputChange("concept", text)} 
                                     style={{width:'100%',height:'100%'}}
+                                    value={newTransfer.concept}
                                     placeholder="Concepto"
                                 />
                             </View>
-                            <TouchableOpacity style={styles.notAviableButton}>
+                            <TouchableOpacity 
+                                onPress={()=>console.log(newTransfer)}
+                                style={styles.notAviableButton}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
                             </TouchableOpacity>
                         </View>
