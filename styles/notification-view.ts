@@ -9,6 +9,11 @@ interface NotificationProps{
     mainInformationDisplay:ViewStyle
     mainBoxesFinalInfo:ViewStyle
     mainBoxesBigInfo:ViewStyle
+    mainBoxesBigInfoTitle:ViewStyle
+    mainBoxesBigInfoData:ViewStyle
+    mainBoxesBigInfoDataDisplay:ViewStyle
+    mainBoxesFinalInfoDataDisplay:ViewStyle
+    btnSizeDisplay:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -60,21 +65,71 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     bottomOptionsDisplay:{
         width:'100%',
-        height:'20%',
-        borderWidth:2,
-        borderColor:'#000000',  
+        height:'20%',         
+        display:'flex' ,
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'column'
     },
     mainBoxesBigInfo:{
         width:'100%',
-        height:'20%',
+        height:'22%',
         borderBottomColor:'#ffffff',
-        borderBottomWidth:1  
+        borderBottomWidth:1,
+        display:'flex',
+        justifyContent:'space-around',
+        flexDirection:'column',
+        alignItems:'center',
+    },
+    mainBoxesBigInfoTitle:{
+        width:'90%',
+        height:'20%',      
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'row',
+        alignItems:'center'
+    },
+    mainBoxesBigInfoData:{
+        width:'90%',
+        height:'70%',          
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'row',
+        alignItems:'center'
+    },
+    mainBoxesBigInfoDataDisplay:{
+        width:'45%',
+        height:'100%',        
+        display:'flex',
+        justifyContent:'space-around',
+        flexDirection:'column',
+        alignItems:'center'
     },
     mainBoxesFinalInfo:{
         width:'100%',
-        height:'40%',
+        height:'34%',
         borderWidth:2,
         borderColor:'#000000',  
-    }
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    mainBoxesFinalInfoDataDisplay:{
+        width:'45%',
+        height:'100%',        
+        display:'flex',
+        justifyContent:'flex-start',
+        flexDirection:'column',
+        rowGap:10
+    },
+    btnSizeDisplay:{
+        width:140,
+        height:50,
+        backgroundColor:'#55aee8',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    },
 })
 export default notificationStyles
