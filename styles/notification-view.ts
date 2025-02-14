@@ -18,6 +18,12 @@ interface NotificationProps{
     tokenTopInfoContainer:ViewStyle
     tokenMainInfo:ViewStyle
     tokenButtonsContainer:ViewStyle
+    resumeInputBoxAmount:ViewStyle
+    topBoxInformationTicket:ViewStyle
+    topBoxBigInfoTicket:ViewStyle
+    bottomBoxInformationTicket:ViewStyle
+    bottomBoxBigInfoTicket:ViewStyle
+    btnGif:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -137,9 +143,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     tokenInfoContainer:{
         width:'100%',
-        height:'65%',
-        borderWidth:1,
-        borderColor:'#000000',
+        height:'65%',        
         display:'flex',
         justifyContent:'space-between',
         alignItems:'center'
@@ -155,9 +159,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     tokenMainInfo:{
         width:'90%',
-        height:'30%', 
-        borderWidth:1,
-        borderColor:'#000000',
+        height:'30%',         
         display:'flex',
         justifyContent:'space-around',
         flexDirection:'column',
@@ -170,6 +172,62 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center'
+    },
+    resumeInputBoxAmount:{
+        width:'100%',
+        height:50,        
+        display:'flex',
+        justifyContent:'flex-start',
+        alignItems:'center',
+        flexDirection:'row',
+        backgroundColor:'#efefef'
+    },
+    topBoxInformationTicket:{
+        width:'100%',
+        height:'35%',        
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center',
+        backgroundColor:'#038715'
+    },
+    topBoxBigInfoTicket:{
+        width:'100%',
+        height:'70%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-around',
+        alignItems:'center',       
+        marginBottom:'auto'
+    },
+    bottomBoxInformationTicket:{
+        width:'100%',
+        height:'65%',        
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        position:'relative'       
+    },
+    btnGif:{
+        width:120,
+        height:50,
+        position: 'absolute',
+        top: '0%',
+        left: '50%',
+        transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
+        borderRadius:25,
+        backgroundColor:'#000000'
+    },
+    bottomBoxBigInfoTicket:{
+        width:'100%',
+        height:'85%',
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'column',
+        alignItems:'center',
+         borderWidth:1,
+        borderColor:'#000000'
     }
 })
 export default notificationStyles

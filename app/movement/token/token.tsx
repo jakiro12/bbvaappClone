@@ -6,7 +6,7 @@ const NewTokenCreated=()=>{
         <View style={styles.container}>
             <View style={styles.tokenTopInfoContainer}>
                 <View style={[styles.topTitleContainer,{backgroundColor:'#9b7239'}]}>
-                        <Text style={styles.topTittleName}>Transfeir & Dimo</Text>
+                        <Text style={styles.topTittleName}>Codigo de seguridad</Text>
                         <TouchableOpacity 
                             style={styles.cancelBtnTop}
                             onPress={()=>router.back()}>
@@ -17,12 +17,16 @@ const NewTokenCreated=()=>{
             </View>
             <View style={styles.tokenInfoContainer}>
                 <View style={styles.tokenMainInfo}>
-                    <Text>Tu codigo de seguridad se generara a traves de tu Token movil de forma automatica</Text>
-                    <View style={{width:150,height:50,borderWidth:1,borderColor:'#000000'}}></View>
+                    <Text style={{fontWeight:'bold',textAlign:'center'}}>Tu código de seguridad se generará a través de tu Token móvil de forma automática</Text>
+                    <View style={[styles.resumeInputBoxAmount,{borderBottomColor:'#000000',borderBottomWidth:1}]}>
+                        <Text style={{width:'100%',height:'auto',textAlign:'center',fontWeight:'bold',fontSize:20}}>. . . . . . . </Text>
+                    </View>
                 </View>
                 <View style={styles.tokenButtonsContainer}>
-                    <TouchableOpacity style={styles.btnSizeDisplay}>
-                            <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:'bold'}}>Continuar</Text>
+                    <TouchableOpacity style={styles.btnSizeDisplay}
+                            onPress={()=>router.push('/movement/token/ticket/ticket')}
+                            >
+                            <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:'bold'}}>Confirmar</Text>                            
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.btnSizeDisplay,{backgroundColor:'#ffffff'}]}>
                             <Text style={{width:'auto',height:'auto',color:'#55aee8',fontWeight:'bold'}}>Cancelar</Text>

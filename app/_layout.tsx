@@ -35,6 +35,7 @@ export default function RootLayout() {
         <Stack.Screen name="home/transfer/adresee/amount/reference/reference" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="movement/current" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="movement/token/token" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
+        <Stack.Screen name="movement/token/ticket/ticket" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 
