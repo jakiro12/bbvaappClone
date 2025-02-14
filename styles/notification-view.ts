@@ -14,6 +14,10 @@ interface NotificationProps{
     mainBoxesBigInfoDataDisplay:ViewStyle
     mainBoxesFinalInfoDataDisplay:ViewStyle
     btnSizeDisplay:ViewStyle
+    tokenInfoContainer:ViewStyle
+    tokenTopInfoContainer:ViewStyle
+    tokenMainInfo:ViewStyle
+    tokenButtonsContainer:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -131,5 +135,41 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+    tokenInfoContainer:{
+        width:'100%',
+        height:'65%',
+        borderWidth:1,
+        borderColor:'#000000',
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    tokenTopInfoContainer:{
+        width:'100%',
+        height:'35%',      
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center',
+        backgroundColor:'#9b7239'
+    },
+    tokenMainInfo:{
+        width:'90%',
+        height:'30%', 
+        borderWidth:1,
+        borderColor:'#000000',
+        display:'flex',
+        justifyContent:'space-around',
+        flexDirection:'column',
+        alignItems:'center'
+    },
+    tokenButtonsContainer:{
+        width:'auto',
+        height:'auto',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center'
+    }
 })
 export default notificationStyles

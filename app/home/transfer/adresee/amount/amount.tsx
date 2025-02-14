@@ -41,7 +41,7 @@ const AmountOfMoneyToSend=()=>{
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxAmountScreen}>
-                    <View style={{width:'100%',height:'35%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                    <View style={{width:'100%',height:isKeyboardVisible ? '45%' :'35%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <View style={[styles.boxAmount,{height:'100%'}]}>
                             <View style={styles.resumeTitleBoxAmount}>
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>IMPORTE</Text>

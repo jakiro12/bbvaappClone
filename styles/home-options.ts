@@ -39,6 +39,8 @@ interface HomeOptionProps{
     checkboxChecked:ViewStyle
     boxAmountScreen:ViewStyle
     priceSymbol:ImageStyle    
+    notAviableText:TextStyle
+    aviableText:TextStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -199,6 +201,16 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         display:'flex',
         justifyContent:'center',
         alignItems:'center',        
+    },
+    notAviableText:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'#dbdbdb'
+    },
+    aviableText:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'#ffffff'
     },
     aviableButton:{
         width:140,

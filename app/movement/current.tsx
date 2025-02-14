@@ -1,8 +1,6 @@
-import { Text, View } from "react-native"
+import { Text, View, Image, TouchableOpacity } from "react-native"
 import styles from '../../styles/notification-view'
-import { TouchableOpacity } from "react-native"
 import { router } from "expo-router"
-import { Image } from "react-native"
 const SeeLastMovement=()=>{
     return(
         <View style={styles.container}>
@@ -82,7 +80,10 @@ const SeeLastMovement=()=>{
                         <Text>Importe a transferir</Text>
                         <Text style={{width:'auto',height:'auto',fontSize:24}}>$1.00</Text>                               
                         <Text>Comision $0.00</Text>
-                        <TouchableOpacity style={styles.btnSizeDisplay}>
+                        <TouchableOpacity 
+                            onPress={()=>router.push('/movement/token/token')}
+                            activeOpacity={1}
+                            style={styles.btnSizeDisplay}>
                             <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:'bold'}}>Continuar</Text>
                         </TouchableOpacity>
                 </View>
