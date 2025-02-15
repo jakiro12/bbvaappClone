@@ -26,28 +26,48 @@ const OperationTicket=()=>{
             <View style={styles.bottomBoxInformationTicket}>
                 <View style={styles.btnGif}></View>
                 <View style={styles.bottomBoxBigInfoTicket}>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.ticketAccountData}>
+                        <View style={{width:'auto',height:'100%',display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'flex-end',rowGap:4}}>
+                            <Text style={{fontWeight:'bold'}}>Cuenta ahorro</Text>
+                            <Text>*90878</Text>
+                        </View>
+                        <View style={{width:'auto',height:'100%',display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'flex-start',rowGap:4}}>
+                            <Text style={{fontWeight:'bold'}}>Prueba</Text>
+                            <Text>*43625</Text>
+                            <Text>Cuenta BANAMEX</Text>
+                        </View>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Concepto</Text>
+                        <Text style={{fontStyle:'italic'}}>01</Text>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Referencia</Text>
+                        <Text>1712240</Text>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Tipo de operacion</Text>
+                        <Text>Transferencia a otros bancos</Text>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Folio de operacion</Text>
+                        <Text>6886345529</Text>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Clave de rastreo</Text>
+                        <Text>MBAN01002501270096085119</Text>
                     </View>
-                    <View>
-                        <Text>info</Text>
+                    <View style={styles.tickeAccountInfo}>
+                        <Text style={{fontWeight:300}}>Verifica el estatus de tu transferencia</Text>
+                        <TouchableOpacity 
+                            activeOpacity={1}
+                            style={{width:'auto',height:'auto'}}
+                        >
+                            <Text style={{fontWeight:'bold',color:'#55aee8'}}>www.banxico.org.mx/cep</Text>
+                        </TouchableOpacity>
                     </View>                    
                 </View>
+            <Text style={{fontWeight:300}}>Recibiras el comprobante de transferencia en tu correo</Text>
             </View>
         </View>
     )

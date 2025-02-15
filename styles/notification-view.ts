@@ -24,6 +24,8 @@ interface NotificationProps{
     bottomBoxInformationTicket:ViewStyle
     bottomBoxBigInfoTicket:ViewStyle
     btnGif:ViewStyle
+    ticketAccountData:ViewStyle
+    tickeAccountInfo:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -205,7 +207,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         height:'65%',        
         display:'flex',
         flexDirection:'column',
-        justifyContent:'center',
+        justifyContent:'flex-end',
         alignItems:'center',
         position:'relative'       
     },
@@ -221,13 +223,29 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     bottomBoxBigInfoTicket:{
         width:'100%',
-        height:'85%',
+        height:'90%',
         display:'flex',
         justifyContent:'space-between',
         flexDirection:'column',
+        alignItems:'center',        
+        marginBottom:5
+    },
+    ticketAccountData:{
+        width:'100%',
+        height:'14%',       
+        display:'flex',
+        justifyContent:'center',
+        flexDirection:'row',
         alignItems:'center',
-         borderWidth:1,
-        borderColor:'#000000'
-    }
+        columnGap:15
+    },
+    tickeAccountInfo:{
+        width:'100%',
+        height:'14%',       
+        display:'flex',
+        justifyContent:'space-around',
+        flexDirection:'column',
+        alignItems:'center',        
+    },
 })
 export default notificationStyles
