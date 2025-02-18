@@ -1,10 +1,18 @@
-import { Text, TouchableOpacity, View,Image, StatusBar } from "react-native"
+import { Text, TouchableOpacity, View,Image, StatusBar, ScrollView } from "react-native"
 import styles from '../../../../styles/notification-view'
 import { router } from "expo-router"
 
 const OperationTicket=()=>{
     return(
-        <View style={styles.container}>
+        <ScrollView  contentContainerStyle={{
+            width:'100%',
+            height:'180%',
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'space-between',
+            alignItems:'center',
+            backgroundColor:'#ffffff'
+        }}>
             <StatusBar backgroundColor="#038715"/>
             <View style={styles.topBoxInformationTicket}>
                 <View style={[styles.topTitleContainer,{backgroundColor:'#038715'}]}>
@@ -69,7 +77,23 @@ const OperationTicket=()=>{
                 </View>
             <Text style={{fontWeight:300}}>Recibiras el comprobante de transferencia en tu correo</Text>
             </View>
-        </View>
+            <View style={styles.boxAlertContainer}>
+                <View style={styles.boxAlertAboutNews}>
+
+                </View>
+                <View style={styles.boxAlertAboutNews}>
+
+                </View>
+            </View>
+            <View style={styles.lastOptionNotificationView}>
+                <TouchableOpacity>
+                    <Text>A</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnSizeDisplay}>
+                    <Text>Salir</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     )
 }
 export default OperationTicket

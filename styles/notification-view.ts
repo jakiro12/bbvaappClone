@@ -26,6 +26,9 @@ interface NotificationProps{
     btnGif:ViewStyle
     ticketAccountData:ViewStyle
     tickeAccountInfo:ViewStyle
+    boxAlertAboutNews:ViewStyle
+    boxAlertContainer:ViewStyle
+    lastOptionNotificationView:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -186,7 +189,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     topBoxInformationTicket:{
         width:'100%',
-        height:'35%',        
+        height:'20%',        
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
@@ -204,12 +207,13 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     bottomBoxInformationTicket:{
         width:'100%',
-        height:'65%',        
+        height:'35%',        
         display:'flex',
         flexDirection:'column',
         justifyContent:'flex-end',
         alignItems:'center',
-        position:'relative'       
+        position:'relative',
+        marginBottom:'auto'
     },
     btnGif:{
         width:120,
@@ -247,5 +251,32 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         flexDirection:'column',
         alignItems:'center',        
     },
+    boxAlertContainer:{
+        width:'100%',
+        height:'20%',        
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center',
+        flexDirection:'column',
+        borderWidth:1,
+        borderColor:'#000000'
+    },
+    boxAlertAboutNews:{
+        width:'95%',
+        height:'45%',        
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        flexDirection:'column',
+        backgroundColor:'#d0e9fd'
+    },
+    lastOptionNotificationView:{
+        width:'100%',
+        height:'20%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+    }
 })
 export default notificationStyles
