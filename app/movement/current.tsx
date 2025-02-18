@@ -1,7 +1,10 @@
 import { Text, View, Image, TouchableOpacity } from "react-native"
 import styles from '../../styles/notification-view'
 import { router } from "expo-router"
+import { BankContext } from "../_layout";
+import { useContext } from "react";
 const SeeLastMovement=()=>{
+        const {newTransfer }: any = useContext(BankContext);
     return(
         <View style={styles.container}>
             <View style={styles.topTitleContainer}>
@@ -53,7 +56,7 @@ const SeeLastMovement=()=>{
                         </View>
                         <View style={styles.mainBoxesBigInfoData}>
                             <View style={[styles.mainBoxesBigInfoDataDisplay,{alignItems:'flex-start',width:'80%'}]}>
-                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontSize:24}}>$1.00</Text>                               
+                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontSize:24}}>${newTransfer.amount_to_send.toLocaleString('mx-MX')}</Text>                               
                             </View>
                         </View>
                     </View>
@@ -70,15 +73,15 @@ const SeeLastMovement=()=>{
                                 <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:100}}>Concepto</Text>
                             </View>
                             <View style={[styles.mainBoxesFinalInfoDataDisplay,{alignItems:'flex-end'}]}>
-                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:100}}>1712240</Text>
-                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:100}}>01</Text>                               
+                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:100}}>{newTransfer.reference}</Text>
+                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:100}}>{newTransfer.concept}</Text>                               
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={styles.bottomOptionsDisplay}>
                         <Text>Importe a transferir</Text>
-                        <Text style={{width:'auto',height:'auto',fontSize:24}}>$1.00</Text>                               
+                        <Text style={{width:'auto',height:'auto',fontSize:24}}>${newTransfer.amount_to_send.toLocaleString('mx-MX')}</Text>                               
                         <Text>Comision $0.00</Text>
                         <TouchableOpacity 
                             onPress={()=>router.push('/movement/token/token')}

@@ -34,7 +34,7 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={styles.inputViewForAddNewAdreseeData}>
                         <TextInput
-                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
+                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4',borderBottomColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
                             keyboardType="number-pad"
                             value={newTransfer.account_number}
                             onChangeText={handleAccountNumberChange} 
@@ -52,8 +52,17 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                         </View>
                     </View>
                     <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
+                        {newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? 
+                        <>
+                            <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>
+                            <Text style={{fontSize:14,marginLeft:5}}>El numero debe tener al menos 10 digitos</Text> 
+                        </>
+                            :
+                        <>
                         <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>
-                        <Text style={{fontSize:14,color:'#9c9c9c',marginLeft:5}}>Puedes hacer transferencias a cuentas o tarjetas de BBVA y otros bancos</Text>
+                            <Text style={{fontSize:14,color:'#9c9c9c',marginLeft:5}}>Puedes hacer transferencias a cuentas o tarjetas de BBVA y otros bancos</Text>
+                        </>
+                        }
                     </View>
                 </View>                
             </View>

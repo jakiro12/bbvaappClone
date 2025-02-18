@@ -123,8 +123,6 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     mainBoxesFinalInfo:{
         width:'100%',
         height:'34%',
-        borderWidth:2,
-        borderColor:'#000000',  
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
@@ -207,7 +205,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     bottomBoxInformationTicket:{
         width:'100%',
-        height:'35%',        
+        height:'40%',        
         display:'flex',
         flexDirection:'column',
         justifyContent:'flex-end',
@@ -231,8 +229,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         display:'flex',
         justifyContent:'space-between',
         flexDirection:'column',
-        alignItems:'center',        
-        marginBottom:5
+        alignItems:'center',              
     },
     ticketAccountData:{
         width:'100%',
@@ -241,11 +238,12 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         justifyContent:'center',
         flexDirection:'row',
         alignItems:'center',
-        columnGap:15
+        columnGap:15,
+        marginTop:5
     },
     tickeAccountInfo:{
         width:'100%',
-        height:'14%',       
+        height:'12%',       
         display:'flex',
         justifyContent:'space-around',
         flexDirection:'column',
@@ -253,29 +251,26 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     boxAlertContainer:{
         width:'100%',
-        height:'20%',        
+        height:'25%',        
         display:'flex',
         justifyContent:'space-between',
         alignItems:'center',
-        flexDirection:'column',
-        borderWidth:1,
-        borderColor:'#000000'
+        flexDirection:'column',    
     },
     boxAlertAboutNews:{
         width:'95%',
-        height:'45%',        
         display:'flex',
-        justifyContent:'center',
+        justifyContent:'space-around',
         alignItems:'center',
         flexDirection:'column',
         backgroundColor:'#d0e9fd'
     },
     lastOptionNotificationView:{
         width:'100%',
-        height:'20%',
+        height:'12%',
         display:'flex',
         flexDirection:'column',
-        justifyContent:'center',
+        justifyContent:'space-between',
         alignItems:'center',
     }
 })

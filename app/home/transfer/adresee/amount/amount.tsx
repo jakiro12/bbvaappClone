@@ -65,7 +65,7 @@ const AmountOfMoneyToSend=()=>{
                             <TouchableOpacity 
                                 onPress={()=>router.push('/home/transfer/adresee/amount/reference/reference')}
                                 style={newTransfer.amount_to_send.length > 0 ? styles.aviableButton : styles.notAviableButton}>
-                                <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
+                                <Text style={{fontSize:18,fontWeight:'bold',color:newTransfer.amount_to_send.length > 0 ? '#ffffff' : '#dbdbdb'}}>Continuar</Text>
                             </TouchableOpacity>
                         </View>                                          
                     </View>

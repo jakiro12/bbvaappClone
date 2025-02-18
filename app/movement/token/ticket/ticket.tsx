@@ -1,8 +1,11 @@
 import { Text, TouchableOpacity, View,Image, StatusBar, ScrollView } from "react-native"
 import styles from '../../../../styles/notification-view'
-import { router } from "expo-router"
+import { router} from "expo-router"
+import Entypo from '@expo/vector-icons/Entypo';
+
 
 const OperationTicket=()=>{
+ 
     return(
         <ScrollView  contentContainerStyle={{
             width:'100%',
@@ -75,22 +78,28 @@ const OperationTicket=()=>{
                         </TouchableOpacity>
                     </View>                    
                 </View>
-            <Text style={{fontWeight:300}}>Recibiras el comprobante de transferencia en tu correo</Text>
+            <Text style={{fontWeight:300, textAlign:'center'}}>Recibiras el comprobante de transferencia en tu correo a<Text style={{fontWeight:'bold'}}> .@hotmail.com</Text> </Text>
             </View>
             <View style={styles.boxAlertContainer}>
-                <View style={styles.boxAlertAboutNews}>
-
+                <View style={[styles.boxAlertAboutNews,{height:'40%'}]}>
+                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={{width:20,height:20}}/>
+                    <Text style={{width:'90%',textAlign:'center'}}>El nombre del beneficiario de esta operacion es un dato no verificado por esta institucion</Text>
                 </View>
-                <View style={styles.boxAlertAboutNews}>
-
+                <View style={[styles.boxAlertAboutNews,{height:'55%'}]}>
+                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={{width:20,height:20}}/>
+                    <Text style={{width:'90%',textAlign:'center'}}>Conoce los requisitos para realizar una aclaracion SPEI</Text>
+                    <Text>Mas informacion</Text>
                 </View>
             </View>
             <View style={styles.lastOptionNotificationView}>
-                <TouchableOpacity>
-                    <Text>A</Text>
+                <TouchableOpacity style={{height:'auto',width:'auto',rowGap:5,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',marginTop:10}}>
+                    <Entypo name="share" size={24} color="#55aee8" />
+                    <Text style={{fontWeight:'bold',color:'#55aee8'}}>Compartir</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnSizeDisplay}>
-                    <Text>Salir</Text>
+                <TouchableOpacity style={styles.btnSizeDisplay}
+                    onPress={()=>router.push('/home/home')}
+                >
+                    <Text style={{fontWeight:'bold',color:'#ffffff'}}>Salir</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

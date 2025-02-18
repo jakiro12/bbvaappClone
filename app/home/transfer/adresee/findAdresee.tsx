@@ -54,7 +54,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
             </View>
             {isKeyboardVisible === false ? 
                 <View style={styles.boxAlertAboutNewAdresee}>
-                    <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20,marginBottom:20}}/>                
+                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="cover" style={{width:20,height:20,marginBottom:20}}/>                
                     <Text style={{width:'90%',height:'auto',textAlign:'center'}}>No hemos encontrado los datos del destinatario. Completa la informacion para realizar la transferencia</Text>
                 </View>
                 : null}                
@@ -76,7 +76,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                         placeholder="Nombre del destinatario"/>
                 </View>
                 <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
-                        <Image source={require('../../../../assets/images/alerttext.png')} resizeMode="cover" style={{width:20,height:20}}/>
+                        <Image source={require('../../../../assets/images/alert.png')} resizeMode="cover" style={{width:20,height:20}}/>
                         <Text style={{fontSize:14,color:'#9c9c9c',marginLeft:5}}>Dato no verificado por la institucion</Text>
                 </View>
             </View>
@@ -110,8 +110,8 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                 <Text>El codigo de seguridad para realizar esta operacion se generara de forma automatica al dar click en continuar</Text>
                 <TouchableOpacity 
                     onPress={()=>router.push('/home/transfer/adresee/amount/amount')}
-                    style={false ?  styles.aviableButton  :styles.notAviableButton}>
-                    <Text style={{fontSize:18,fontWeight:'bold',color:false ? '#ffffff' : '#dbdbdb'}}>Continuar</Text>
+                    style={newTransfer.bank_name.length > 0 && newTransfer.adresee_name.length > 0 && newTransfer.alias_adresee.length > 0 ?  styles.aviableButton  : styles.notAviableButton}>
+                    <Text style={{fontSize:18,fontWeight:'bold',color:newTransfer.bank_name.length > 0 && newTransfer.adresee_name.length > 0 && newTransfer.alias_adresee.length > 0 ? '#ffffff' : '#dbdbdb'}}>Continuar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{width:'auto',height:'auto'}}>
                     <Text style={{color:'#55aee8',fontWeight:'bold',fontSize:18}}>Hacer otra busqueda</Text>
