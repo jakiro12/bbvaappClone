@@ -14,7 +14,7 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
         <TouchableOpacity 
             style={styles.cancelBtnTop}
             onPress={()=>router.back()}>
-            <Text style={{color:'#ffffff',fontSize:20}}>X</Text>
+            <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                                
         </TouchableOpacity>
     </View>
     <View style={[styles.boxAdresee,{height:'25%',backgroundColor:'#ffffff'}]}>
@@ -49,9 +49,9 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Importe</Text>
             </View>
             <Text>Dispones en tu cuenta de un saldo de $3,226.33</Text>
-            <TouchableOpacity style={styles.notAviableButton}>
+            <View style={styles.notAviableButton}>
                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
-            </TouchableOpacity>
+            </View>
         </View>
         <View style={[styles.boxConcept,{height:'55%'}]}>
             <View style={styles.resumeTitleBoxConcept}>
@@ -64,9 +64,9 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
             <View style={styles.resumeInputBoxAmount}>
                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Concepto (opcional)</Text>
             </View>
-            <TouchableOpacity style={styles.notAviableButton}>
+            <View style={styles.notAviableButton}>
                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
-            </TouchableOpacity>
+            </View>
         </View>
     </View>
         </>

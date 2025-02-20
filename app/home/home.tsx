@@ -1,9 +1,22 @@
 import { Image, ImageBackground, StatusBar, Text, TouchableOpacity, View } from "react-native"
 import styles from '../../styles/home-styles'
 import DownNavBar from "@/components/down-nav-bar"
-import { router, usePathname } from "expo-router"
+import { router, useNavigation, usePathname } from "expo-router"
+import { useEffect } from "react"
 const HomeScreen =()=>{
     const routeName=usePathname()    
+    const navigation = useNavigation();
+
+    // Effect
+    useEffect(() => {
+        navigation.addListener("beforeRemove", (e) => {
+       // Prevent default behavior of leaving the screen
+       if (e.data.action.type === "GO_BACK") {
+        e.preventDefault();
+      }
+    });
+  }, []);
+
     return(
         <ImageBackground source={require('../../assets/images/fondo3.png')} resizeMode="cover" style={styles.container}>            
         <StatusBar   backgroundColor="#004481"/>        

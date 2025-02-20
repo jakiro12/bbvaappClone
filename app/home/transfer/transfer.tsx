@@ -9,7 +9,7 @@ const TransferMoneyTo=()=>{
                 <TouchableOpacity 
                     style={styles.cancelBtnTop}
                     onPress={()=>router.back()}>
-                    <Text style={{color:'#ffffff',fontSize:20}}>x</Text>
+                    <Image source={require('../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                                        
                 </TouchableOpacity>
             </View>
             <View style={styles.originBox}>
@@ -64,9 +64,9 @@ const TransferMoneyTo=()=>{
                     <View style={styles.resumeInputBoxAmount}>
                         <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Importe</Text>
                     </View>
-                    <TouchableOpacity style={styles.notAviableButton}>
+                    <View style={styles.notAviableButton}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
-                    </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={styles.boxConcept}>
                     <View style={styles.resumeTitleBoxConcept}>

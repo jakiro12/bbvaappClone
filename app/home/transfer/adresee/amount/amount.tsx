@@ -80,9 +80,9 @@ const AmountOfMoneyToSend=()=>{
                             <View style={styles.resumeInputBoxAmount}>
                                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Concepto</Text>
                             </View>
-                            <TouchableOpacity style={styles.notAviableButton}>
+                            <View style={styles.notAviableButton}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
-                            </TouchableOpacity>
+                            </View>
                         </View>
                 </View>
         </>
