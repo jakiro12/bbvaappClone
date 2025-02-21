@@ -46,7 +46,7 @@ const AddReference=()=>{
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>CONCEPTO</Text>
                                 <Text style={styles.currentPositionText}>(4 de 4)</Text>
                             </View>
-                            <View style={styles.resumeInputBoxAmount}>
+                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.reference.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("reference", text)} 
                                     style={{width:'100%',height:'100%'}}
@@ -54,7 +54,7 @@ const AddReference=()=>{
                                     value={newTransfer.reference}
                                 />
                             </View>
-                            <View style={styles.resumeInputBoxAmount}>
+                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.concept.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("concept", text)} 
                                     style={{width:'100%',height:'100%'}}

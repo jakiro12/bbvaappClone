@@ -68,7 +68,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                     <Text style={{marginLeft:10}}>{newTransfer.bank_name.length === 0 ? "Banco/Entidad" : newTransfer.bank_name}</Text>
                     <AntDesign name="down" size={24} color="black" style={{marginRight:20}}/>
                 </TouchableOpacity>
-                <View style={styles.inputViewForAddNewAdreseeData}>
+                <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor:newTransfer.adresee_name.length > 0 ? '#000000bd' : '#cccccc'}]}>
                      <TextInput
                         style={{width:'100%',height:'100%'}}
                         value={newTransfer.adresee_name}
@@ -92,7 +92,10 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                     <Text style={{fontSize:20}}>
                         Guardar contacto
                     </Text>
-                    <Text>Este destinatario quedara guardado en tus contactos de BBVA</Text>
+                    <View style={{width:'auto',height:'auto',display:'flex',flexDirection:'row'}}>
+                        <Image source={require('../../../../assets/images/alert.png')} resizeMode="cover" style={{width:20,height:20}}/>                        
+                        <Text style={{height:'auto',marginLeft:5}}>Este destinatario quedara guardado en tus contactos de BBVA</Text>
+                    </View>
                  </View>
             </View>
             <View style={styles.boxToAddAlias}>

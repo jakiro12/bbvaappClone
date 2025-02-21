@@ -90,7 +90,7 @@ const OperationTicket=()=>{
                 <View style={[styles.boxAlertAboutNews,{height:'55%'}]}>
                     <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={{width:20,height:20}}/>
                     <Text style={{width:'90%',textAlign:'center'}}>Conoce los requisitos para realizar una aclaracion SPEI</Text>
-                    <Text>Mas informacion</Text>
+                    <Text style={{fontWeight:'bold',color:'#55aee8'}}>Mas informacion</Text>
                 </View>
             </View>
             <View style={styles.lastOptionNotificationView}>
