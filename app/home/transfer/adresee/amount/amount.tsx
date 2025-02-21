@@ -45,7 +45,7 @@ const AmountOfMoneyToSend=()=>{
                         <View style={[styles.boxAmount,{height:'100%'}]}>
                             <View style={styles.resumeTitleBoxAmount}>
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>IMPORTE</Text>
-                                <Text style={{fontSize:14,fontWeight:100,marginLeft:10}}>(3 de 4)</Text>
+                                <Text style={styles.currentPositionText}>(3 de 4)</Text>
                             </View>
                             <View style={[styles.resumeInputBoxAmount,{position:'relative'}]}>
                                 <TextInput 
@@ -72,7 +72,7 @@ const AmountOfMoneyToSend=()=>{
                         <View style={[styles.boxConcept,{height:'45%',marginBottom:'auto'}]}>
                             <View style={styles.resumeTitleBoxConcept}>
                                 <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>CONCEPTO</Text>
-                                <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(4 de 4)</Text>
+                                <Text style={styles.hiddenPositionText}>(4 de 4)</Text>
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
                                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Referencia</Text>

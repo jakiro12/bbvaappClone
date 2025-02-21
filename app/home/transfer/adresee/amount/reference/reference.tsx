@@ -1,5 +1,5 @@
 import { router } from "expo-router"
-import { Keyboard, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Keyboard, Text, TextInput, TouchableOpacity, View, Image } from "react-native"
 import styles from '../../../../../../styles/home-options'
 import { BankContext } from "@/app/_layout";
 import { useContext, useEffect, useState } from "react";
@@ -38,13 +38,13 @@ const AddReference=()=>{
                     <TouchableOpacity 
                         style={styles.cancelBtnTop}
                         onPress={()=>router.back()}>
-                        <Text style={{color:'#ffffff',fontSize:20}}>X</Text>
+                        <Image source={require('../../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                                               
                     </TouchableOpacity>
                 </View>
                 <View style={[styles.boxConcept,{height:isKeyboardVisible ? '70%' :'45%',marginBottom:'auto'}]}>
                             <View style={styles.resumeTitleBoxConcept}>
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>CONCEPTO</Text>
-                                <Text style={{fontSize:14,fontWeight:100,marginLeft:10}}>(4 de 4)</Text>
+                                <Text style={styles.currentPositionText}>(4 de 4)</Text>
                             </View>
                             <View style={styles.resumeInputBoxAmount}>
                                 <TextInput 

@@ -6,8 +6,6 @@ import { useEffect } from "react"
 const HomeScreen =()=>{
     const routeName=usePathname()    
     const navigation = useNavigation();
-
-    // Effect
     useEffect(() => {
         navigation.addListener("beforeRemove", (e) => {
        // Prevent default behavior of leaving the screen
@@ -16,7 +14,6 @@ const HomeScreen =()=>{
       }
     });
   }, []);
-
     return(
         <ImageBackground source={require('../../assets/images/fondo3.png')} resizeMode="cover" style={styles.container}>            
         <StatusBar   backgroundColor="#004481"/>        

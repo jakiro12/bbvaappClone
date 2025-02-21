@@ -20,7 +20,7 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
     <View style={[styles.boxAdresee,{height:'25%',backgroundColor:'#ffffff'}]}>
             <View style={styles.resumeTitleBoxAdresee}>
                 <Text style={{fontSize:18,fontWeight:'bold'}}>DESTINATARIO</Text>
-                <Text style={{fontSize:14,fontWeight:100,color:'#9c9c9c',marginLeft:10}}>(2 de 4)</Text>
+                <Text style={styles.currentPositionText}>(2 de 4)</Text>
             </View>
             <View style={styles.resumeActionsAdresee}>
                 <TouchableOpacity 
@@ -43,7 +43,7 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
         <View style={[styles.boxAmount,{height:'45%'}]}>
         <View style={styles.resumeTitleBoxAmount}>
                 <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>IMPORTE</Text>
-                <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(3 de 4)</Text>
+                <Text style={styles.hiddenPositionText}>(3 de 4)</Text>
             </View>
             <View style={styles.resumeInputBoxAmount}>
                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Importe</Text>
@@ -56,7 +56,7 @@ const MainOptionsToChoose:React.FC<MainOptionProps>=({setAdreseeStatus})=>{
         <View style={[styles.boxConcept,{height:'55%'}]}>
             <View style={styles.resumeTitleBoxConcept}>
                 <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>CONCEPTO</Text>
-                <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(4 de 4)</Text>
+                <Text style={styles.hiddenPositionText}>(4 de 4)</Text>
             </View>
             <View style={styles.resumeInputBoxAmount}>
                 <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Referencia</Text>

@@ -15,15 +15,15 @@ const TransferMoneyTo=()=>{
             <View style={styles.originBox}>
                 <View style={styles.titleBoxOrigin}>
                     <Text style={{fontSize:18,fontWeight:'bold'}}>ORIGEN</Text>
-                    <Text style={{fontSize:14,fontWeight:100,color:'#9c9c9c',marginLeft:10}}>(1 de 4)</Text>
+                    <Text style={styles.currentPositionText}>(1 de 4)</Text>
                 </View>
                 <View style={styles.nameUserBoxOrigin}>
                 <View style={[styles.boxInfoDisplay,{alignItems:'flex-start'}]}>
                             <Text style={{fontSize:18,fontWeight:'bold',color:'#55aee8'}}>Aranza Castillo</Text>
-                            <Text style={{fontSize:18}}>*90878</Text>
+                            <Text style={{fontSize:18,fontStyle:'italic'}}>*90878</Text>
                         </View>
                         <View style={[styles.boxInfoDisplay,{alignItems:'flex-end'}]}>
-                            <Text style={{fontSize:22}}>$3226.33</Text>
+                            <Text style={{fontSize:22,width:'auto',height:'auto'}}><Text style={{fontSize:14}}>$</Text>3226.33</Text>
                             <Text style={{fontSize:18,fontWeight:100,color:'#9c9c9c'}}>Saldo disponible</Text>
                         </View>
                 </View>
@@ -39,7 +39,7 @@ const TransferMoneyTo=()=>{
                 <View style={styles.boxAdresee}>
                     <View style={styles.resumeTitleBoxAdresee}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>DESTINATARIO</Text>
-                        <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(2 de 4)</Text>
+                        <Text style={styles.hiddenPositionText}>(2 de 4)</Text>
                     </View>
                     <View style={styles.resumeActionsAdresee}>
                         <View style={styles.resumeActionsAdreseeDescription}>
@@ -59,7 +59,7 @@ const TransferMoneyTo=()=>{
                 <View style={styles.boxAmount}>
                     <View style={styles.resumeTitleBoxAmount}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>IMPORTE</Text>
-                        <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(3 de 4)</Text>
+                        <Text style={styles.hiddenPositionText}>(3 de 4)</Text>
                     </View>
                     <View style={styles.resumeInputBoxAmount}>
                         <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Importe</Text>
@@ -71,7 +71,7 @@ const TransferMoneyTo=()=>{
                 <View style={styles.boxConcept}>
                     <View style={styles.resumeTitleBoxConcept}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>CONCEPTO</Text>
-                        <Text style={{fontSize:14,fontWeight:100,color:'#cccccc',marginLeft:10}}>(4 de 4)</Text>
+                        <Text style={styles.hiddenPositionText}>(4 de 4)</Text>
                     </View>
                     <View style={styles.resumeInputBoxAmount}>
                         <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Referencia</Text>

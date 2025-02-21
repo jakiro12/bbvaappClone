@@ -2,10 +2,12 @@ import { Text, TouchableOpacity, View,Image, StatusBar, ScrollView } from "react
 import styles from '../../../../styles/notification-view'
 import { router} from "expo-router"
 import Entypo from '@expo/vector-icons/Entypo';
+import { BankContext } from "@/app/_layout";
+import { useContext } from "react";
 
 
 const OperationTicket=()=>{
- 
+     const {newTransfer,setNewTransfer }: any = useContext(BankContext);
     return(
         <ScrollView  contentContainerStyle={{
             width:'100%',
@@ -30,7 +32,7 @@ const OperationTicket=()=>{
                     <Text style={{width:'auto',height:'auto',fontSize:16,fontWeight:'bold',color:'#ffffff'}}>Operacion exitosa</Text>
                     <Text style={{width:'auto',height:'auto',fontSize:14,fontWeight:'bold',color:'#ffffff',fontStyle:'italic'}}>27 de enero 2025 13:19:05 h</Text>
                     <Text style={{width:'auto',height:'auto',fontSize:16,color:'#ffffff',fontWeight:100}}>Importe a transferir</Text>
-                    <Text style={{width:'auto',height:'auto',fontSize:24,color:'#ffffff'}}>$1.00</Text>                               
+                    <Text style={{width:'auto',height:'auto',fontSize:24,color:'#ffffff'}}>${newTransfer.amount_to_send}</Text>                               
                     <Text style={{width:'auto',height:'auto',fontSize:14,fontWeight:100,color:'#ffffff',fontStyle:'italic'}}>Comision $0.00</Text>
                 </View>
             </View>
@@ -50,11 +52,11 @@ const OperationTicket=()=>{
                     </View>
                     <View style={styles.tickeAccountInfo}>
                         <Text style={{fontWeight:300}}>Concepto</Text>
-                        <Text style={{fontStyle:'italic'}}>01</Text>
+                        <Text style={{fontStyle:'italic'}}>{newTransfer.concept}</Text>
                     </View>
                     <View style={styles.tickeAccountInfo}>
                         <Text style={{fontWeight:300}}>Referencia</Text>
-                        <Text>1712240</Text>
+                        <Text>{newTransfer.reference}</Text>
                     </View>
                     <View style={styles.tickeAccountInfo}>
                         <Text style={{fontWeight:300}}>Tipo de operacion</Text>

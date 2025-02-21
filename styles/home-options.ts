@@ -41,6 +41,8 @@ interface HomeOptionProps{
     priceSymbol:ImageStyle    
     notAviableText:TextStyle
     aviableText:TextStyle
+    currentPositionText:TextStyle
+    hiddenPositionText:TextStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -366,6 +368,20 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         left: 10,                
         transform: [{ translateX: '-50%' }, { translateY: '-50%' }],        
         tintColor:'#000000'
+    },
+    currentPositionText:{
+        fontSize:14,
+        fontWeight:100,
+        color:'#9c9c9c',
+        marginLeft:10,
+        fontStyle:'italic'
+    },
+    hiddenPositionText:{
+        fontSize:14,
+        fontWeight:100,
+        color:'#cccccc',
+        marginLeft:10,
+        fontStyle:'italic'
     },
 
 })
