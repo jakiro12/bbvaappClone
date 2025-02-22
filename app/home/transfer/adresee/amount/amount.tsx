@@ -30,6 +30,9 @@ const AmountOfMoneyToSend=()=>{
               keyboardDidHideListener.remove();
             };
           }, []);
+    const cleanAccountNumberChange = () => {
+            setNewTransfer((prev:TransferData) => ({ ...prev, amount_to_send: "" }));
+          };
     return(
         <>
                 <View style={styles.topTitleContainer}>
@@ -53,15 +56,17 @@ const AmountOfMoneyToSend=()=>{
                                     style={{width:'90%',height:'100%',paddingLeft:15}}
                                     placeholder="Importe"
                                     keyboardType="number-pad"
+                                    value={newTransfer.amount_to_send}
                                 />
                                 {newTransfer.amount_to_send.length > 0 ?
                                 <Image source={require('../../../../../assets/images/dolar.png')} resizeMode="contain" style={styles.priceSymbol}/> : null
                             }
                                 <TouchableOpacity 
-                                                           
-                                                            activeOpacity={1}
-                                                            style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
-                                    <Image source={require('../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  '#004481'}} resizeMode="cover"/>
+                                        onPress={cleanAccountNumberChange}
+                                        disabled={newTransfer.amount_to_send.length === 0}                
+                                        activeOpacity={1}
+                                        style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                                    <Image source={require('../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  newTransfer.amount_to_send.length > 0 ? '#004481' : '#efefef'}} resizeMode="cover"/>
                                 </TouchableOpacity>
                             </View>
                             <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>

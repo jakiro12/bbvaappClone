@@ -29,6 +29,7 @@ interface NotificationProps{
     boxAlertAboutNews:ViewStyle
     boxAlertContainer:ViewStyle
     lastOptionNotificationView:ViewStyle
+    bubbleUser:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -272,6 +273,15 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         flexDirection:'column',
         justifyContent:'space-between',
         alignItems:'center',
-    }
+    },
+    bubbleUser:{
+        width:50,
+        height:50,
+        borderRadius:50,
+        backgroundColor:'#49a5e6',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    },
 })
 export default notificationStyles

@@ -30,6 +30,9 @@ const AddReference=()=>{
           keyboardDidHideListener.remove();
         };
       }, []);
+      const cleanCurrentInputValue = (key: keyof TransferData) => {
+                  setNewTransfer((prev:TransferData) => ({ ...prev,[key]: "" }));
+                };
     return(
         <>
         <View style={{width:'100%',height:'100%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>                
@@ -49,18 +52,32 @@ const AddReference=()=>{
                             <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.reference.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("reference", text)} 
-                                    style={{width:'100%',height:'100%'}}
+                                    style={{width:'90%',height:'100%'}}
                                     placeholder="Referencia"
                                     value={newTransfer.reference}
                                 />
+                                <TouchableOpacity 
+                                      onPress={()=>cleanCurrentInputValue("reference")}
+                                      disabled={newTransfer.reference.length === 0}                
+                                      activeOpacity={1}
+                                      style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                                      <Image source={require('../../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  newTransfer.reference.length > 0 ? '#004481' : '#efefef'}} resizeMode="cover"/>
+                                </TouchableOpacity>
                             </View>
                             <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.concept.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("concept", text)} 
-                                    style={{width:'100%',height:'100%'}}
+                                    style={{width:'90%',height:'100%'}}
                                     value={newTransfer.concept}
                                     placeholder="Concepto"
                                 />
+                                 <TouchableOpacity 
+                                      onPress={()=>cleanCurrentInputValue("concept")}                                      
+                                      disabled={newTransfer.concept.length === 0}                
+                                      activeOpacity={1}
+                                      style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                                      <Image source={require('../../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  newTransfer.concept.length > 0 ? '#004481' : '#efefef'}} resizeMode="cover"/>
+                                </TouchableOpacity>
                             </View>
                             <TouchableOpacity 
                                 activeOpacity={1}

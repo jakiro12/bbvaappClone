@@ -39,7 +39,9 @@ const SeeLastMovement=()=>{
                             </TouchableOpacity>
                         </View>
                         <View style={styles.mainBoxesBigInfoData}>
-                            <View style={{width:40,height:40,borderColor:'#000000',borderWidth:2,borderRadius:40}}></View>
+                            <View style={styles.bubbleUser}>
+                                <Text style={{fontSize:20,color:'#ffffff',fontWeight:'bold'}}>AC</Text>
+                            </View>
                             <View style={[styles.mainBoxesBigInfoDataDisplay,{alignItems:'flex-start',width:'80%'}]}>
                                 <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:'bold'}}>prueba</Text>
                                 <Text style={{width:'auto',height:'auto',color:'#ffffff',fontStyle:'italic'}}>4152313458243625</Text>
