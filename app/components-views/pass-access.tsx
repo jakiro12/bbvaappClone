@@ -17,7 +17,6 @@ const PasswordAccess:React.FC<AccessProps> =({backToLogin})=>{
         setSecurityPass(!securityPass);
       };
       const handleChange = (value: string) => {
-        console.log(value)
         setPassword(value)
     };
     const checkCredentials=()=>{
@@ -32,7 +31,7 @@ const PasswordAccess:React.FC<AccessProps> =({backToLogin})=>{
                     activeOpacity={1}
                     onPress={backToLogin}
                 >
-                    <Text style={{color:'#ffffff',fontSize:24}}>X</Text>
+                    <Image source={require('../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                                            
                 </TouchableOpacity>
             </View>
             <View style={styles.putCredentialsContainer}>
@@ -52,7 +51,8 @@ const PasswordAccess:React.FC<AccessProps> =({backToLogin})=>{
                         onChangeText={(text) => handleChange(text)}  // Actualizamos el estado
                         />
                         <TouchableOpacity style={styles.eyePass}
-                        onPress={toggleSecureTextEntry}
+                            activeOpacity={1}
+                            onPress={toggleSecureTextEntry}
                         >
                         <Image source={require('../../assets/images/ojo.png')} resizeMode="contain" style={{width:30,height:30,tintColor:'#075b99',marginTop:15}} />
                         </TouchableOpacity>
