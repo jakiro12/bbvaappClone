@@ -41,7 +41,10 @@ const HomeScreen =()=>{
                 </TouchableOpacity>                        
            </View>
            <View style={styles.mainInfoAbout}>
-                <View style={styles.boxMainInfoDisplay}>
+                <TouchableOpacity 
+                    onPress={()=>router.push('/home/account-information/myAccount')}
+                    activeOpacity={1}
+                    style={styles.boxMainInfoDisplay}>
                     <View style={styles.titleCardBox}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#5e5e5e'}}>CUENTAS EN PESOS</Text>
                     </View>
@@ -55,7 +58,7 @@ const HomeScreen =()=>{
                             <Text style={{fontSize:18,fontWeight:100,color:'#9c9c9c'}}>Saldo disponible</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.boxMainInfoDisplay}>
                 <View style={styles.titleCardBox}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#5e5e5e'}}>TARJETAS</Text>
