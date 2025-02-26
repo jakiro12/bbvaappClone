@@ -3,8 +3,20 @@ import styles from '../../../styles/account-styles'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { router } from "expo-router";
 import { Image } from "react-native";
+import MoveItemDetails from "./components/moveItem";
 const MyAccountGeneralInformation=()=>{
     const deviceHeight=Dimensions.get('window').height - 50;
+    const helpData=[
+        { date: '25 de febrero', movements: [{
+            name:'Spei enviado Banamex',
+            opertationType:'Tipo de operacion',
+            value:1200,
+            status:'Transito'
+        }] },
+        
+    ]
+
+    
     return(
         <View style={styles.container}>
             <View style={styles.titleTopContainer}>
@@ -57,7 +69,21 @@ const MyAccountGeneralInformation=()=>{
                                 <Image source={require('../../../assets/images/mas.png')} resizeMode="contain" style={{width:80,height:35}}/>                     
                             </TouchableOpacity>                        
                         </View>
+                        <View style={{width:'100%',height:40,backgroundColor:'#cccccc'}}>
+                            <Text>Ultimos movimientos</Text>
+                        </View>
+                        {helpData.map((item, index) => (
+                        <View key={index} style={{ width: '100%', padding: 10 }}>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{item.date}</Text>
+                        <View style={{ marginTop: 10 }}>
+                            {item.movements.map((movement, i) => (
+                                <MoveItemDetails movement={movement} key={i}/>
+                            ))}
+                        </View>
+                        </View>
+                    ))}
                     </View>
+                 
                                     
                 </ScrollView>
            </View>

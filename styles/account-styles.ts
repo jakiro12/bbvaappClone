@@ -72,7 +72,7 @@ const accountStyles : AccountProps = StyleSheet.create({
     },
     mainBtnsOptions:{
         width:'100%',
-        height:100,
+        height:80,
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
