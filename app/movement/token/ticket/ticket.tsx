@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View,Image, StatusBar, ScrollView } from "react-native"
+import { Text, TouchableOpacity, View,Image, StatusBar, ScrollView, ImageBackground } from "react-native"
 import styles from '../../../../styles/notification-view'
 import { router} from "expo-router"
 import Entypo from '@expo/vector-icons/Entypo';
@@ -37,7 +37,15 @@ const OperationTicket=()=>{
                 </View>
             </View>
             <View style={styles.bottomBoxInformationTicket}>
-                <View style={styles.btnGif}></View>
+                <ImageBackground                 
+                    source={require('../../../../assets/images/giftbg.png')}
+                    resizeMode="cover"
+                    style={styles.btnGif}>
+                    <Image source={require('../../../../assets/images/cardticket.png')} style={{width:50,height:25}} resizeMode="contain"/>
+                    <View style={styles.bubbleTicket}>
+                        <Text style={{fontSize:16,fontWeight:'bold',color:'#ffffff'}}>AC</Text>
+                    </View>
+                </ImageBackground>
                 <View style={styles.bottomBoxBigInfoTicket}>
                     <View style={styles.ticketAccountData}>
                         <View style={{width:'auto',height:'100%',display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'flex-end',rowGap:4}}>

@@ -30,6 +30,7 @@ interface NotificationProps{
     boxAlertContainer:ViewStyle
     lastOptionNotificationView:ViewStyle
     bubbleUser:ViewStyle
+    bubbleTicket:ViewStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -221,8 +222,12 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         top: '0%',
         left: '50%',
         transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
-        borderRadius:25,
-        backgroundColor:'#000000'
+        borderRadius:25,      
+        overflow:'hidden',
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'row'
     },
     bottomBoxBigInfoTicket:{
         width:'100%',
@@ -283,5 +288,13 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+    bubbleTicket:{
+        width:35,height:35,
+        backgroundColor:'#f98c06',
+        borderRadius:35,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    }
 })
 export default notificationStyles

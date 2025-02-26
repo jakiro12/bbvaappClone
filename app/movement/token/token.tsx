@@ -13,7 +13,7 @@ const NewTokenCreated=()=>{
                             <Image source={require('../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                        
                         </TouchableOpacity>
                 </View>
-                <View style={{width:150,height:'70%',borderWidth:1,borderColor:'#000000'}}></View>
+                <Image source={require('../../../assets/images/slot.png')} resizeMode="contain" style={{width:100,height:70,marginBottom:'25%'}}/>
             </View>
             <View style={styles.tokenInfoContainer}>
                 <View style={styles.tokenMainInfo}>
