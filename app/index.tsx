@@ -44,7 +44,6 @@ const GetInApp=()=>{
                     <View style={styles.boxBtns}>
                         <TouchableOpacity style={styles.btnOptionLogin}>
                         <Image source={require('../assets/images/btnin2.png')} style={{width:50,height:50}} resizeMode="cover"/>
-
                         </TouchableOpacity>
                         <Text style={{fontSize:12,color:'#ffffff',marginTop:10}}>Operacion QR + CoDi*</Text>
                     </View>

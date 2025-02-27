@@ -9,11 +9,42 @@ const MyAccountGeneralInformation=()=>{
     const helpData=[
         { date: '25 de febrero', movements: [{
             name:'Spei enviado Banamex',
-            opertationType:'Tipo de operacion',
+            opertationType:'Transferencia interbancaria enviada',
+            value:100,
+            status:'Transito'
+        },
+        {
+            name:'Spei enviado Banamex',
+            opertationType:'Transferencia interbancaria enviada',
+            value:1500.33,
+            status:'Transito'
+        },
+        {
+            name:'Spei enviado Banamex',
+            opertationType:'Transferencia interbancaria enviada',
+            value:1500.33,
+            status:'Transito'
+        }
+    ] },
+         { date: '26 de febrero', movements: [{
+            name:'Spei enviado Banamex',
+            opertationType:'Transferencia interbancaria enviada',
             value:1200,
             status:'Transito'
-        }] },
-        
+        },
+        {
+            name:'Spei enviado Banamex',
+            opertationType:'Transferencia interbancaria enviada',
+            value:200,
+            status:'Transito'
+        },
+        {
+            name:'Spei enviado Banamex',
+            opertationType:'Transferencia interbancaria enviada',
+            value:1200,
+            status:'Transito'
+        },        
+    ] },
     ]
 
     
@@ -28,7 +59,7 @@ const MyAccountGeneralInformation=()=>{
                 <Text style={styles.topTittleName}>Cuentas</Text>
             </View>
            <View style={{width:'100%',height:deviceHeight,marginTop:50,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
-                <ScrollView contentContainerStyle={{width:'100%',borderWidth:1,borderColor:'#000000',rowGap:10,display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'column'}}>
+                <ScrollView contentContainerStyle={{width:'100%',rowGap:10,display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'column'}}>
                     <View style={styles.topScrollContainer}>
                         <View style={styles.nameAccountBoxTop}>
                             <Text style={{fontSize:20,fontWeight:'bold'}}>Nombre</Text>
@@ -54,7 +85,7 @@ const MyAccountGeneralInformation=()=>{
                             </TouchableOpacity>
                         </View>    
                     </View>
-                    <View style={{width:'100%',height:600,borderWidth:1,borderColor:'#000000'}}>
+                    <View style={{width:'100%',height:600}}>
                         <View style={styles.mainBtnsOptions}>
                             <TouchableOpacity style={styles.btnMainOptionContainer}>
                                 <Image source={require('../../../assets/images/transferir.png')} resizeMode="contain" style={{width:85,height:50}}/>                                         
@@ -69,22 +100,24 @@ const MyAccountGeneralInformation=()=>{
                                 <Image source={require('../../../assets/images/mas.png')} resizeMode="contain" style={{width:80,height:35}}/>                     
                             </TouchableOpacity>                        
                         </View>
-                        <View style={{width:'100%',height:40,backgroundColor:'#cccccc'}}>
-                            <Text>Ultimos movimientos</Text>
+                        <View style={{width:'100%',height:40,backgroundColor:'#f4f4f4',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                            <Text style={{width:'95%',height:'auto',fontWeight:'bold',fontSize:16}}>ULTIMOS MOVIMIENTOS</Text>
                         </View>
                         {helpData.map((item, index) => (
-                        <View key={index} style={{ width: '100%', padding: 10 }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{item.date}</Text>
-                        <View style={{ marginTop: 10 }}>
-                            {item.movements.map((movement, i) => (
-                                <MoveItemDetails movement={movement} key={i}/>
-                            ))}
-                        </View>
+                        <View key={index} style={{ width: '100%', height:'auto',display:'flex',flexDirection:'column',alignItems:'center' }}>
+                            <Text style={{ fontSize: 18, fontWeight: 'bold',fontStyle:'italic',width:'95%',height:'auto' }}>{item.date}</Text>
+                                {item.movements.map((movement, i) => (
+                                    <MoveItemDetails movement={movement} key={i}/>
+                                ))}
+                            
                         </View>
                     ))}
                     </View>
-                 
-                                    
+                    <TouchableOpacity 
+                        onPress={()=>router.push('/home/account-information/all-movements/fullList')}
+                        style={{width:'auto',height:'auto'}}>
+                                <Text style={{color:'#55aee8',fontSize:18,fontWeight:'bold'}}>Ver todos</Text>
+                    </TouchableOpacity>                                    
                 </ScrollView>
            </View>
         </View>

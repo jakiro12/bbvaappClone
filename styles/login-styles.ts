@@ -110,7 +110,8 @@ const loginStyles : AccountProps = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'flex-start',
         alignItems:'center',
-        marginBottom:10
+        marginBottom:10,
+        columnGap:8
     },
     boxBtns:{
         width:'20%',

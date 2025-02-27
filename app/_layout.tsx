@@ -37,6 +37,7 @@ export default function RootLayout() {
         <Stack.Screen name="movement/token/token" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="movement/token/ticket/ticket" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="home/account-information/myAccount" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
+        <Stack.Screen name="home/account-information/all-movements/fullList" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 
