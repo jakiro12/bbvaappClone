@@ -9,6 +9,7 @@ interface AccountProps{
     nameAccountBoxBottom:ViewStyle
     mainBtnsOptions:ViewStyle
     btnMainOptionContainer:ViewStyle
+    boxAlertAbout:ViewStyle
 }
 const accountStyles : AccountProps = StyleSheet.create({
     container:{
@@ -29,7 +30,7 @@ const accountStyles : AccountProps = StyleSheet.create({
         zIndex: 1, 
         height:50,
         display:'flex',
-        justifyContent:'flex-start',
+        justifyContent:'space-between',
         alignItems:'center',
         flexDirection:'row'
     },
@@ -86,6 +87,17 @@ const accountStyles : AccountProps = StyleSheet.create({
         flexDirection:'column',
         justifyContent:'space-around',
         alignItems:'center'
+    },
+    boxAlertAbout:{
+        width:'95%',
+        height:150,        
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        flexDirection:'column',
+        backgroundColor:'#d0e9fd',
+        marginBottom:40,
+        marginTop:10
     },
 })
 

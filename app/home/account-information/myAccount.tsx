@@ -51,11 +51,11 @@ const MyAccountGeneralInformation=()=>{
     return(
         <View style={styles.container}>
             <View style={styles.titleTopContainer}>
-        <TouchableOpacity 
-                onPress={()=>router.back()}
-                >
-                <AntDesign name="arrowleft" size={24} color="#ffffff" style={{marginLeft:10}} />
-        </TouchableOpacity>
+                <TouchableOpacity 
+                        onPress={()=>router.back()}
+                        >
+                        <AntDesign name="arrowleft" size={24} color="#ffffff" style={{marginLeft:10}} />
+                </TouchableOpacity>
                 <Text style={styles.topTittleName}>Cuentas</Text>
             </View>
            <View style={{width:'100%',height:deviceHeight,marginTop:50,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
