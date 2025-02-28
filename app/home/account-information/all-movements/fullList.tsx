@@ -160,7 +160,7 @@ const helpData=[
                         <View key={index} style={{ width: '100%', height:'auto',display:'flex',flexDirection:'column',alignItems:'center' }}>
                             <Text style={{ fontSize: 18, fontWeight: 'bold',fontStyle:'italic',width:'95%',height:'auto' }}>{item.date}</Text>
                                 {item.movements.map((movement, i) => (
-                                    <MoveItemDetails movement={movement} key={i}/>
+                                    <MoveItemDetails movement={movement} key={i} index={i}/>
                                 ))}
                             
                         </View>

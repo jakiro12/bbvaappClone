@@ -1,5 +1,5 @@
 export interface TransferData{
-    account_number:string
+      account_number:string
       bank_name:string
       adresee_name:string
       save_data:boolean

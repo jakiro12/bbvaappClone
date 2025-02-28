@@ -7,6 +7,8 @@ import 'react-native-reanimated';
 interface BankContextType {
   newTransfer: TransferData;
   setNewTransfer: React.Dispatch<React.SetStateAction<TransferData>>;
+  idMovement:number | null;
+  setIdMovement: React.Dispatch<React.SetStateAction<number | null>>
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -24,8 +26,9 @@ export default function RootLayout() {
     reference:'',
     concept:''
   })
+  const[idMovement,setIdMovement]=useState<number | null>(null)
   return (
-    <BankContext.Provider value={{newTransfer,setNewTransfer}}>
+    <BankContext.Provider value={{newTransfer,setNewTransfer,idMovement,setIdMovement}}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="home/home" options={{ headerShown: false }} />
@@ -38,6 +41,7 @@ export default function RootLayout() {
         <Stack.Screen name="movement/token/ticket/ticket" options={{ headerShown: false,animation:'slide_from_bottom',animationDuration:600}} />
         <Stack.Screen name="home/account-information/myAccount" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="home/account-information/all-movements/fullList" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
+        <Stack.Screen name="home/account-information/movement-choosen/information" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 
