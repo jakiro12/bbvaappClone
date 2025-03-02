@@ -42,6 +42,7 @@ export default function RootLayout() {
         <Stack.Screen name="home/account-information/myAccount" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="home/account-information/all-movements/fullList" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="home/account-information/movement-choosen/information" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
+        <Stack.Screen name="home/plus/plus-options" options={{ headerShown: false,animation:'slide_from_right',animationDuration:600}} />
         <Stack.Screen name="+not-found" />
         <StatusBar style="auto" />
       </Stack> 

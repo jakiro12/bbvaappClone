@@ -36,7 +36,9 @@ const HomeScreen =()=>{
                 <TouchableOpacity style={styles.btnMainOptionContainer}>
                     <Image source={require('../../assets/images/retiro.png')} resizeMode="contain" style={{width:85,height:50}}/>                     
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnMainOptionContainer}>
+                <TouchableOpacity style={styles.btnMainOptionContainer}
+                    onPress={()=>router.push('/home/plus/plus-options')}
+                    >
                     <Image source={require('../../assets/images/mas.png')} resizeMode="contain" style={{width:80,height:35}}/>                     
                 </TouchableOpacity>                        
            </View>
