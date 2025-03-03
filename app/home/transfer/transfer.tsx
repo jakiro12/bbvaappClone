@@ -23,7 +23,9 @@ const TransferMoneyTo=()=>{
                             <Text style={{fontSize:18,fontStyle:'italic'}}>*90878</Text>
                         </View>
                         <View style={[styles.boxInfoDisplay,{alignItems:'flex-end'}]}>
-                            <Text style={{fontSize:22,width:'auto',height:'auto'}}><Text style={{fontSize:14}}>$</Text>3226.33</Text>
+                            <View style={styles.amountAccountContainer}>
+                                <Text style={styles.valueSymbol}>$</Text><Text style={styles.valueNumber}>3226.33</Text>
+                            </View>                            
                             <Text style={{fontSize:18,fontWeight:100,color:'#9c9c9c'}}>Saldo disponible</Text>
                         </View>
                 </View>

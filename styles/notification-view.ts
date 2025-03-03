@@ -31,6 +31,9 @@ interface NotificationProps{
     lastOptionNotificationView:ViewStyle
     bubbleUser:ViewStyle
     bubbleTicket:ViewStyle
+    amountAccountContainer:ViewStyle
+    valueSymbol:TextStyle
+    valueNumber:TextStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -295,6 +298,29 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         display:'flex',
         justifyContent:'center',
         alignItems:'center'
+    },
+    amountAccountContainer:{
+        width:'auto',
+        height:'auto',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    valueSymbol:{
+        fontSize:14,
+        width:15,
+        height:'auto',
+        textAlign:'center',
+        marginBottom:5,
+        color:'#ffffff'
+    },
+    valueNumber:{
+        fontSize:22,
+        width:'auto',
+        height:'auto',
+        color:'#ffffff'
+
     }
 })
 export default notificationStyles

@@ -43,6 +43,9 @@ interface HomeOptionProps{
     aviableText:TextStyle
     currentPositionText:TextStyle
     hiddenPositionText:TextStyle
+    amountAccountContainer:ViewStyle
+    valueSymbol:TextStyle
+    valueNumber:TextStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -383,6 +386,26 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         marginLeft:10,
         fontStyle:'italic'
     },
+    amountAccountContainer:{
+        width:'auto',
+        height:'auto',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    valueSymbol:{
+        fontSize:14,
+        width:15,
+        height:'auto',
+        textAlign:'center',
+        marginBottom:5
+    },
+    valueNumber:{
+        fontSize:22,
+        width:'auto',
+        height:'auto'
+    }
 
 })
 export default homeOptionStyles

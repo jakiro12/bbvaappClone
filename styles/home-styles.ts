@@ -15,6 +15,12 @@ interface HomeProps{
     infoCardBox:ViewStyle
     boxInfoDisplay:ViewStyle
     borxCardUserInfo:ViewStyle
+    amountAccountContainer:ViewStyle
+    valueSymbol:TextStyle
+    valueNumber:TextStyle
+    cardBoxTitle:TextStyle
+    phoneIconContent:ViewStyle
+    menu:ViewStyle
 }
 const homeStyles : HomeProps = StyleSheet.create({
     container:{
@@ -143,6 +149,49 @@ const homeStyles : HomeProps = StyleSheet.create({
         flexDirection:'column',
         alignItems:'flex-start',
         justifyContent:'space-between'
+    },
+    amountAccountContainer:{
+        width:'auto',
+        height:'auto',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    valueSymbol:{
+        fontSize:14,
+        width:15,
+        height:'auto',
+        textAlign:'center',
+        marginBottom:5
+    },
+    valueNumber:{
+        fontSize:22,
+        width:'auto',
+        height:'auto'
+    },
+    cardBoxTitle:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'#5e5e5e'
+    },
+    phoneIconContent:{
+        width:'20%',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'flex-start',
+        alignItems:'flex-end',
+    },
+    menu:{
+        position: 'absolute',
+        right: 0,
+        width: 250,
+        height: '100%',
+        backgroundColor: '#004481',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
 export default homeStyles

@@ -46,8 +46,8 @@ const plusStyles : PlusProps = StyleSheet.create({
         fontWeight:'bold'
     },
     btnBackContainer:{
-        width:30,
-        height:30,        
+        width:40,
+        height:35,        
         display:'flex',
         flexDirection:'column',
         justifyContent:'center'

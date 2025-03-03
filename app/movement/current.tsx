@@ -26,7 +26,9 @@ const SeeLastMovement=()=>{
                                 <Text style={{width:'auto',height:'auto',color:'#ffffff',fontStyle:'italic'}}>*90878</Text>
                             </View>
                             <View style={[styles.mainBoxesBigInfoDataDisplay,{alignItems:'flex-end'}]}>
-                                <Text style={{width:'auto',height:'auto',color:'#ffffff',fontSize:20}}>$1,388.33</Text>
+                                <View style={styles.amountAccountContainer}>
+                                    <Text style={styles.valueSymbol}>$</Text><Text style={styles.valueNumber}>3226.33</Text>
+                                </View>   
                                 <Text style={{width:'auto',height:'auto',color:'#ffffff'}}>Saldo disponible</Text>                               
                             </View>
                         </View>
