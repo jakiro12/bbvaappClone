@@ -186,7 +186,7 @@ const homeStyles : HomeProps = StyleSheet.create({
     menu:{
         position: 'absolute',
         right: 0,
-        width: 250,
+        width: 280,
         height: '100%',
         backgroundColor: '#004481',
         display:'flex',

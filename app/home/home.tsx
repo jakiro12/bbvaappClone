@@ -8,14 +8,14 @@ const HomeScreen =()=>{
     const routeName=usePathname()    
     const navigation = useNavigation();
     const [translateX] = useState(new Animated.Value(0)); // Controla el desplazamiento de la vista principal
-    const [squareTranslateX] = useState(new Animated.Value(250)); // Controla el desplazamiento del cuadrado (comienza fuera de la pantalla)
+    const [squareTranslateX] = useState(new Animated.Value(280)); // Controla el desplazamiento del cuadrado (comienza fuera de la pantalla)
     const [isAnimating, setIsAnimating] = useState(false);
     
       useEffect(() => {
         if (isAnimating) {
           // Animación para empujar el contenido principal hacia la izquierda
           Animated.timing(translateX, {
-            toValue: -250, // Desplazar hacia la izquierda
+            toValue: -280, // Desplazar hacia la izquierda
             duration: 600,
             easing: Easing.ease,
             useNativeDriver: true,
@@ -39,7 +39,7 @@ const HomeScreen =()=>{
     
           // Animación para mover el cuadrado desde la derecha hacia su posición
           Animated.timing(squareTranslateX, {
-            toValue: 250, // El cuadrado llegará al borde derecho de la pantalla
+            toValue: 280, // El cuadrado llegará al borde derecho de la pantalla
             duration: 600,
             easing: Easing.ease,
             useNativeDriver: true,
