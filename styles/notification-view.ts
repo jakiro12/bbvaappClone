@@ -34,6 +34,14 @@ interface NotificationProps{
     amountAccountContainer:ViewStyle
     valueSymbol:TextStyle
     valueNumber:TextStyle
+    dateTextTitle:TextStyle
+    dateTextTitleInformation:TextStyle
+    dateAmountIformation:TextStyle
+    ticketAccountDataContainerInfo:ViewStyle
+    shareBtn:ViewStyle
+    iconsAlert:ImageStyle
+    mainScrollContainer:ViewStyle
+    agreeTextBtn:TextStyle
 }
 const notificationStyles : NotificationProps = StyleSheet.create({
     container:{
@@ -201,7 +209,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     topBoxBigInfoTicket:{
         width:'100%',
-        height:'70%',
+        height:'65%',
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-around',
@@ -234,7 +242,7 @@ const notificationStyles : NotificationProps = StyleSheet.create({
     },
     bottomBoxBigInfoTicket:{
         width:'100%',
-        height:'90%',
+        height:'87%',
         display:'flex',
         justifyContent:'space-between',
         flexDirection:'column',
@@ -321,6 +329,64 @@ const notificationStyles : NotificationProps = StyleSheet.create({
         height:'auto',
         color:'#ffffff'
 
+    },
+    dateTextTitle:{
+        width:'auto',
+        height:'auto',
+        fontSize:16,
+        fontWeight:'bold',
+        color:'#ffffff'
+    },
+    dateTextTitleInformation:{
+        width:'auto',
+        height:'auto',
+        fontSize:16,
+        color:'#ffffff',
+        fontWeight:100
+    },
+    dateAmountIformation:{
+        width:'auto',
+        height:'auto',
+        fontSize:24,
+        color:'#ffffff'
+    },
+    ticketAccountDataContainerInfo:{
+        width:'auto',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'flex-start',
+        alignItems:'flex-end',
+        rowGap:4
+    },
+    shareBtn:{
+        height:'auto',
+        width:'auto',
+        rowGap:5,
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+        marginTop:10
+    },
+    iconsAlert:{
+        width:20,
+        height:20
+    },
+    mainScrollContainer:{
+        width:'100%',
+        height:'180%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center',
+        backgroundColor:'#ffffff'
+    },
+    agreeTextBtn:{
+        width:'auto',
+        height:'auto',
+        color:'#ffffff',
+        fontWeight:'bold'
     }
 })
 export default notificationStyles

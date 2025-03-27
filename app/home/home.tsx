@@ -1,15 +1,18 @@
-import { Image, ImageBackground, StatusBar, Text, TouchableOpacity, View, Animated, Easing } from "react-native"
+import { Image, ImageBackground, StatusBar, Text, TouchableOpacity, View, Animated, Easing, Dimensions } from "react-native"
 import styles from '../../styles/home-styles'
 import DownNavBar from "@/components/down-nav-bar"
 import { router, useNavigation, usePathname } from "expo-router"
 import { useEffect,useState } from "react"
 import SideMenuOptions from "../components-views/side-menu"
+import CloseAppAlert from "../components-views/modal-close-app"
 const HomeScreen =()=>{
     const routeName=usePathname()    
     const navigation = useNavigation();
     const [translateX] = useState(new Animated.Value(0)); // Controla el desplazamiento de la vista principal
     const [squareTranslateX] = useState(new Animated.Value(280)); // Controla el desplazamiento del cuadrado (comienza fuera de la pantalla)
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [scaleY]=useState(new Animated.Value(1))
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
+    const [showCloseApp,setShowCloseApp]=useState<boolean>(false)
     
       useEffect(() => {
         if (isAnimating) {
@@ -19,8 +22,7 @@ const HomeScreen =()=>{
             duration: 600,
             easing: Easing.ease,
             useNativeDriver: true,
-          }).start();
-    
+          }).start();    
           // Animación para mover el cuadrado desde la derecha hacia su posición
           Animated.timing(squareTranslateX, {
             toValue: 0, // El cuadrado llegará al borde derecho de la pantalla
@@ -28,6 +30,12 @@ const HomeScreen =()=>{
             easing: Easing.ease,
             useNativeDriver: true,
           }).start();
+          Animated.timing(scaleY,{
+            toValue:0.8,
+            duration:600,
+            easing:Easing.ease,
+            useNativeDriver:true
+          }).start()
         }else{
              // Animación para empujar el contenido principal hacia la izquierda
           Animated.timing(translateX, {
@@ -35,8 +43,7 @@ const HomeScreen =()=>{
             duration: 600,
             easing: Easing.ease,
             useNativeDriver: true,
-          }).start();
-    
+          }).start();    
           // Animación para mover el cuadrado desde la derecha hacia su posición
           Animated.timing(squareTranslateX, {
             toValue: 280, // El cuadrado llegará al borde derecho de la pantalla
@@ -44,22 +51,33 @@ const HomeScreen =()=>{
             easing: Easing.ease,
             useNativeDriver: true,
           }).start();
+          Animated.timing(scaleY,{
+            toValue:1,
+            duration:600,
+            easing:Easing.ease,
+            useNativeDriver:true
+          }).start()
         }
-      }, [isAnimating, translateX, squareTranslateX]);
+      }, [isAnimating, translateX, squareTranslateX,scaleY]);
     
     useEffect(() => {
         navigation.addListener("beforeRemove", (e) => {
-       // Prevent default behavior of leaving the screen
        if (e.data.action.type === "GO_BACK") {
-        e.preventDefault();
+        e.preventDefault(); //Evita retroceder con el boton del dispositivo
+        setShowCloseApp(true)
       }
     });
   }, []);
-  
+  // 
+  const handleRouteDisplay=(nameRoute:any)=>{
+    router.push(nameRoute)
+    setIsAnimating(false)
+  }
     return(
+      <View style={[styles.container,{backgroundColor:'#004481'}]}>
         <ImageBackground source={require('../../assets/images/fondo3.png')} resizeMode="cover" style={styles.container}>            
         <StatusBar   backgroundColor="#004481"/>        
-        <Animated.View style={[styles.container, { transform: [{ translateX }] }]}>
+        <Animated.View style={[styles.container, { transform: [{ translateX },{scaleY}] }]}>
            <View style={styles.topOptionsContainer}>
                 <Text style={styles.topTittleName}>Hola Aranza</Text>
                 <View style={styles.bgTopFix}></View>
@@ -91,7 +109,7 @@ const HomeScreen =()=>{
            </View>
            <View style={styles.mainInfoAbout}>
                 <TouchableOpacity 
-                    onPress={()=>router.push('/home/account-information/myAccount')}
+                    onPress={()=>handleRouteDisplay('/home/account-information/myAccount')}
                     activeOpacity={1}
                     style={styles.boxMainInfoDisplay}>
                     <View style={styles.titleCardBox}>
@@ -134,6 +152,8 @@ const HomeScreen =()=>{
              <SideMenuOptions onCloseMenu={setIsAnimating}/>
         </Animated.View>
         </ImageBackground>
+        <CloseAppAlert visibility={showCloseApp} onCloseMenu={setShowCloseApp}/>
+      </View>
     )
 }
 export default HomeScreen

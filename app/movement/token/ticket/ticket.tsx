@@ -9,15 +9,7 @@ import { useContext } from "react";
 const OperationTicket=()=>{
      const {newTransfer,setNewTransfer }: any = useContext(BankContext);
     return(
-        <ScrollView  contentContainerStyle={{
-            width:'100%',
-            height:'180%',
-            display:'flex',
-            flexDirection:'column',
-            justifyContent:'space-between',
-            alignItems:'center',
-            backgroundColor:'#ffffff'
-        }}>
+        <ScrollView  contentContainerStyle={styles.mainScrollContainer}>
             <StatusBar backgroundColor="#038715"/>
             <View style={styles.topBoxInformationTicket}>
                 <View style={[styles.topTitleContainer,{backgroundColor:'#038715'}]}>
@@ -25,15 +17,15 @@ const OperationTicket=()=>{
                         <TouchableOpacity 
                             style={styles.cancelBtnTop}
                             onPress={()=>router.back()}>
-                            <Image source={require('../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                        
+                            <Image source={require('../../../../assets/images/x.png')} style={[styles.iconsAlert,{tintColor:'#ffffff'}]} resizeMode="cover"/>                                        
                         </TouchableOpacity>
                 </View>
                 <View style={styles.topBoxBigInfoTicket}>
-                    <Text style={{width:'auto',height:'auto',fontSize:16,fontWeight:'bold',color:'#ffffff'}}>Operacion exitosa</Text>
-                    <Text style={{width:'auto',height:'auto',fontSize:14,fontWeight:'bold',color:'#ffffff',fontStyle:'italic'}}>27 de enero 2025 13:19:05 h</Text>
-                    <Text style={{width:'auto',height:'auto',fontSize:16,color:'#ffffff',fontWeight:100}}>Importe a transferir</Text>
-                    <Text style={{width:'auto',height:'auto',fontSize:24,color:'#ffffff'}}>${newTransfer.amount_to_send}</Text>                               
-                    <Text style={{width:'auto',height:'auto',fontSize:14,fontWeight:100,color:'#ffffff',fontStyle:'italic'}}>Comision $0.00</Text>
+                    <Text style={styles.dateTextTitle}>Operacion exitosa</Text>
+                    <Text style={[styles.dateTextTitle,{fontStyle:'italic'}]}>27 de enero 2025 13:19:05 h</Text>
+                    <Text style={styles.dateTextTitleInformation}>Importe a transferir</Text>
+                    <Text style={styles.dateAmountIformation}>${newTransfer.amount_to_send}</Text>                               
+                    <Text style={[styles.dateTextTitleInformation,{fontStyle:'italic'}]}>Comision $0.00</Text>
                 </View>
             </View>
             <View style={styles.bottomBoxInformationTicket}>
@@ -48,11 +40,11 @@ const OperationTicket=()=>{
                 </ImageBackground>
                 <View style={styles.bottomBoxBigInfoTicket}>
                     <View style={styles.ticketAccountData}>
-                        <View style={{width:'auto',height:'100%',display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'flex-end',rowGap:4}}>
+                        <View style={styles.ticketAccountDataContainerInfo}>
                             <Text style={{fontWeight:'bold'}}>Cuenta ahorro</Text>
                             <Text>*90878</Text>
                         </View>
-                        <View style={{width:'auto',height:'100%',display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'flex-start',rowGap:4}}>
+                        <View style={styles.ticketAccountDataContainerInfo}>
                             <Text style={{fontWeight:'bold'}}>Prueba</Text>
                             <Text>*43625</Text>
                             <Text>Cuenta BANAMEX</Text>
@@ -92,17 +84,17 @@ const OperationTicket=()=>{
             </View>
             <View style={styles.boxAlertContainer}>
                 <View style={[styles.boxAlertAboutNews,{height:'40%'}]}>
-                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={{width:20,height:20}}/>
+                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={styles.iconsAlert}/>
                     <Text style={{width:'90%',textAlign:'center'}}>El nombre del beneficiario de esta operacion es un dato no verificado por esta institucion</Text>
                 </View>
                 <View style={[styles.boxAlertAboutNews,{height:'55%'}]}>
-                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={{width:20,height:20}}/>
+                    <Image source={require('../../../../assets/images/alert.png')} resizeMode="contain" style={styles.iconsAlert}/>
                     <Text style={{width:'90%',textAlign:'center'}}>Conoce los requisitos para realizar una aclaracion SPEI</Text>
                     <Text style={{fontWeight:'bold',color:'#55aee8'}}>Mas informacion</Text>
                 </View>
             </View>
             <View style={styles.lastOptionNotificationView}>
-                <TouchableOpacity style={{height:'auto',width:'auto',rowGap:5,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',marginTop:10}}>
+                <TouchableOpacity style={styles.shareBtn}>
                     <Entypo name="share" size={24} color="#55aee8" />
                     <Text style={{fontWeight:'bold',color:'#55aee8'}}>Compartir</Text>
                 </TouchableOpacity>

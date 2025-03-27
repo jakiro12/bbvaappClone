@@ -9,7 +9,7 @@ const GetInApp=()=>{
     return(
         <>
             {getAccess ? <PasswordAccess backToLogin={()=>setGetAccess(false)}/> :   <View style={styles.container}>
-            <StatusBar  backgroundColor="#004274"/>
+            <StatusBar  backgroundColor="#004274" />
             <View style={styles.topContainer}>
               <ImageBackground source={require('../assets/images/fondoarriba.png')} resizeMode="cover" style={styles.backgroundTopContainer}>
                 <View style={styles.topOptionsBox}>
@@ -21,8 +21,8 @@ const GetInApp=()=>{
                 </View>
                 <View style={styles.nameUserBox}>
                     <View style={styles.nameDataUser}>
-                        <Text style={{fontSize:22,fontWeight:'bold',color:'#ffffff'}}>Hola Aranza</Text>
-                        <Text style={{fontSize:14,fontWeight:'bold',color:'#55aee8'}}>Cambiar de usuario</Text>
+                        <Text style={styles.textNameTitle}>Hola Aranza</Text>
+                        <Text style={styles.textAnotherUserBtn}>Cambiar de usuario</Text>
                     </View>
                     <View style={styles.bubbleUser}>
                         <Text style={{fontSize:20,color:'#ffffff',fontWeight:'bold'}}>AC</Text>
@@ -32,24 +32,24 @@ const GetInApp=()=>{
                     onPress={()=>setGetAccess(true)}
                     activeOpacity={1}
                     style={styles.btnSignIn}>
-                    <Text style={{fontSize:16,fontWeight:'bold',color:'#11649a'}}>Iniciar Sesion</Text>
+                    <Text style={styles.textGetInTitle}>Iniciar Sesion</Text>
                 </TouchableOpacity>
                 <View style={styles.btnOptionsContainer}>
                     <View style={styles.boxBtns}>
                         <TouchableOpacity style={styles.btnOptionLogin}>
-                           <Image source={require('../assets/images/btnin1.png')} style={{width:50,height:50}} resizeMode="cover"/>
+                           <Image source={require('../assets/images/btnin1.png')} style={styles.indexIconsActions} resizeMode="cover"/>
                         </TouchableOpacity>
                         <Text style={{fontSize:12,color:'#ffffff'}}>Token Movil</Text>
                     </View>
                     <View style={styles.boxBtns}>
                         <TouchableOpacity style={styles.btnOptionLogin}>
-                        <Image source={require('../assets/images/btnin2.png')} style={{width:50,height:50}} resizeMode="cover"/>
+                        <Image source={require('../assets/images/btnin2.png')} style={styles.indexIconsActions} resizeMode="cover"/>
                         </TouchableOpacity>
                         <Text style={{fontSize:12,color:'#ffffff',marginTop:10}}>Operacion QR + CoDi*</Text>
                     </View>
                     <View style={styles.boxBtns}>
                         <TouchableOpacity style={styles.btnOptionLogin}>
-                        <Image source={require('../assets/images/btnin3.png')} style={{width:50,height:50}} resizeMode="cover"/>
+                        <Image source={require('../assets/images/btnin3.png')} style={styles.indexIconsActions} resizeMode="cover"/>
                         </TouchableOpacity>
                         <Text style={{fontSize:12,color:'#ffffff'}}>Emergencias</Text>
                     </View>

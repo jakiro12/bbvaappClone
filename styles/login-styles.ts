@@ -21,6 +21,10 @@ interface AccountProps{
     btnAccessPass:ViewStyle
     inputData:TextStyle
     eyePass:ViewStyle
+    indexIconsActions:ImageStyle
+    textGetInTitle:TextStyle
+    textNameTitle:TextStyle
+    textAnotherUserBtn:TextStyle
 }
 const loginStyles : AccountProps = StyleSheet.create({
     container:{
@@ -177,5 +181,24 @@ const loginStyles : AccountProps = StyleSheet.create({
         borderBottomWidth:1,
         backgroundColor:'#004481'        
     },
+    indexIconsActions:{
+        width:50,
+        height:50
+    },
+    textGetInTitle:{
+        fontSize:16,
+        fontWeight:'bold',
+        color:'#11649a'
+    },
+    textNameTitle:{
+        fontSize:22,
+        fontWeight:'bold',
+        color:'#ffffff'
+    },
+    textAnotherUserBtn:{
+        fontSize:14,
+        fontWeight:'bold',
+        color:'#55aee8'
+    }
 })
 export default loginStyles

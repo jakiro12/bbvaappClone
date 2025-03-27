@@ -47,7 +47,7 @@ const AmountOfMoneyToSend=()=>{
                     <View style={{width:'100%',height:isKeyboardVisible ? '45%' :'35%',backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <View style={[styles.boxAmount,{height:'100%'}]}>
                             <View style={styles.resumeTitleBoxAmount}>
-                                <Text style={{fontSize:18,fontWeight:'bold'}}>IMPORTE</Text>
+                                <Text style={styles.typeInputTitle}>IMPORTE</Text>
                                 <Text style={styles.currentPositionText}>(3 de 4)</Text>
                             </View>
                             <View style={[styles.resumeInputBoxAmount,{position:'relative',borderBottomColor:newTransfer.amount_to_send.length > 0 ? '#000000bd' : '#efefef',borderBottomWidth:2}]}>
@@ -82,7 +82,7 @@ const AmountOfMoneyToSend=()=>{
                     </View>
                         <View style={[styles.boxConcept,{height:'45%',marginBottom:'auto'}]}>
                             <View style={styles.resumeTitleBoxConcept}>
-                                <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>CONCEPTO</Text>
+                                <Text style={styles.typeNotAviableInputTitle}>CONCEPTO</Text>
                                 <Text style={styles.hiddenPositionText}>(4 de 4)</Text>
                             </View>
                             <View style={styles.resumeInputBoxAmount}>

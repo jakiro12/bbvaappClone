@@ -46,6 +46,11 @@ interface HomeOptionProps{
     amountAccountContainer:ViewStyle
     valueSymbol:TextStyle
     valueNumber:TextStyle
+    typeInputTitle:TextStyle
+    typeNotAviableInputTitle:TextStyle
+    notAviableButtonIcon:ImageStyle
+    notAviableInformation:TextStyle
+    placeholderInputNoAviable:TextStyle
 }
 
 const homeOptionStyles : HomeOptionProps = StyleSheet.create({
@@ -405,6 +410,31 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         fontSize:22,
         width:'auto',
         height:'auto'
+    },
+    typeInputTitle:{
+        fontSize:18,
+        fontWeight:'bold'
+    },
+    typeNotAviableInputTitle:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'#a8a8a8'
+    },
+    notAviableButtonIcon:{
+        width:40,
+        height:40
+    },
+    notAviableInformation:{
+        color:'#9c9c9c',
+        fontWeight:'bold',
+        fontSize:18, 
+        marginLeft:10
+    },
+    placeholderInputNoAviable:{
+        marginLeft:10,
+        fontSize:14,
+        fontWeight:'bold',
+        color:'#9c9c9c'
     }
 
 })

@@ -14,7 +14,7 @@ const TransferMoneyTo=()=>{
             </View>
             <View style={styles.originBox}>
                 <View style={styles.titleBoxOrigin}>
-                    <Text style={{fontSize:18,fontWeight:'bold'}}>ORIGEN</Text>
+                    <Text style={styles.typeInputTitle}>ORIGEN</Text>
                     <Text style={styles.currentPositionText}>(1 de 4)</Text>
                 </View>
                 <View style={styles.nameUserBoxOrigin}>
@@ -40,31 +40,31 @@ const TransferMoneyTo=()=>{
             <View style={styles.detailsBox}>
                 <View style={styles.boxAdresee}>
                     <View style={styles.resumeTitleBoxAdresee}>
-                        <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>DESTINATARIO</Text>
+                        <Text style={styles.typeNotAviableInputTitle}>DESTINATARIO</Text>
                         <Text style={styles.hiddenPositionText}>(2 de 4)</Text>
                     </View>
                     <View style={styles.resumeActionsAdresee}>
                         <View style={styles.resumeActionsAdreseeDescription}>
-                            <Image source={require('../../../assets/images/plusnot.png')} style={{width:40,height:40}} resizeMode="cover"/>
-                            <Text style={{color:'#9c9c9c',fontWeight:'bold',fontSize:18, marginLeft:10}}>Nuevo</Text>
+                            <Image source={require('../../../assets/images/plusnot.png')} style={styles.notAviableButtonIcon} resizeMode="cover"/>
+                            <Text style={styles.notAviableInformation}>Nuevo</Text>
                         </View>
                         <View style={styles.resumeActionsAdreseeDescription}>
-                            <Image source={require('../../../assets/images/accountnot.png')} style={{width:40,height:40}} resizeMode="cover"/>
-                            <Text style={{color:'#9c9c9c',fontWeight:'bold',fontSize:18, marginLeft:10}}>Mis cuentas y Tarjetas</Text>
+                            <Image source={require('../../../assets/images/accountnot.png')} style={styles.notAviableButtonIcon} resizeMode="cover"/>
+                            <Text style={styles.notAviableInformation}>Mis cuentas y Tarjetas</Text>
                         </View>
                         <View style={styles.resumeActionsAdreseeDescription}>
-                            <Image source={require('../../../assets/images/contactnot.png')} style={{width:40,height:40}} resizeMode="cover"/>
-                            <Text style={{color:'#9c9c9c',fontWeight:'bold',fontSize:18, marginLeft:10}}>Contactos guardados</Text>
+                            <Image source={require('../../../assets/images/contactnot.png')} style={styles.notAviableButtonIcon} resizeMode="cover"/>
+                            <Text style={styles.notAviableInformation}>Contactos guardados</Text>
                         </View>
                     </View>
                 </View>
                 <View style={styles.boxAmount}>
                     <View style={styles.resumeTitleBoxAmount}>
-                        <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>IMPORTE</Text>
+                        <Text style={styles.typeNotAviableInputTitle}>IMPORTE</Text>
                         <Text style={styles.hiddenPositionText}>(3 de 4)</Text>
                     </View>
                     <View style={styles.resumeInputBoxAmount}>
-                        <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Importe</Text>
+                        <Text style={styles.placeholderInputNoAviable}>Importe</Text>
                     </View>
                     <View style={styles.notAviableButton}>
                         <Text style={{fontSize:18,fontWeight:'bold',color:'#dbdbdb'}}>Continuar</Text>
@@ -72,11 +72,11 @@ const TransferMoneyTo=()=>{
                 </View>
                 <View style={styles.boxConcept}>
                     <View style={styles.resumeTitleBoxConcept}>
-                        <Text style={{fontSize:18,fontWeight:'bold',color:'#a8a8a8'}}>CONCEPTO</Text>
+                        <Text style={styles.typeNotAviableInputTitle}>CONCEPTO</Text>
                         <Text style={styles.hiddenPositionText}>(4 de 4)</Text>
                     </View>
                     <View style={styles.resumeInputBoxAmount}>
-                        <Text style={{marginLeft:10,fontSize:14,fontWeight:'bold',color:'#9c9c9c'}}>Referencia</Text>
+                        <Text style={styles.placeholderInputNoAviable}>Referencia</Text>
                     </View>
                 </View>
             </View>

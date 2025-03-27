@@ -10,7 +10,7 @@ const NewTokenCreated=()=>{
                         <TouchableOpacity 
                             style={styles.cancelBtnTop}
                             onPress={()=>router.back()}>
-                            <Image source={require('../../../assets/images/x.png')} style={{width:20,height:20,tintColor:'#ffffff'}} resizeMode="cover"/>                                        
+                            <Image source={require('../../../assets/images/x.png')} style={[styles.iconsAlert,{tintColor:'#ffffff'}]} resizeMode="cover"/>                                        
                         </TouchableOpacity>
                 </View>
                 <Image source={require('../../../assets/images/slot.png')} resizeMode="contain" style={{width:100,height:70,marginBottom:'25%'}}/>
@@ -26,7 +26,7 @@ const NewTokenCreated=()=>{
                     <TouchableOpacity style={styles.btnSizeDisplay}
                             onPress={()=>router.push('/movement/token/ticket/ticket')}
                             >
-                            <Text style={{width:'auto',height:'auto',color:'#ffffff',fontWeight:'bold'}}>Confirmar</Text>                            
+                            <Text style={styles.agreeTextBtn}>Confirmar</Text>                            
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.btnSizeDisplay,{backgroundColor:'#ffffff'}]}>
                             <Text style={{width:'auto',height:'auto',color:'#55aee8',fontWeight:'bold'}}>Cancelar</Text>

@@ -21,6 +21,12 @@ interface HomeProps{
     cardBoxTitle:TextStyle
     phoneIconContent:ViewStyle
     menu:ViewStyle
+    menuContainerOptions:ViewStyle
+    menuTopInformation:ViewStyle
+    menuTopInformationName:TextStyle
+    menuMainOptionsContainer:ViewStyle
+    menuScrollOptions:ViewStyle
+    menuItemDisplayed:ViewStyle
 }
 const homeStyles : HomeProps = StyleSheet.create({
     container:{
@@ -53,9 +59,9 @@ const homeStyles : HomeProps = StyleSheet.create({
     },
     bgTopFix:{
         width:'100%',
-        height:'3%',
+        height:'5%',
         position: 'absolute',
-        top: '0%',
+        top: 0,
         left: '50%',
         transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
         backgroundColor:'#004481'
@@ -192,6 +198,48 @@ const homeStyles : HomeProps = StyleSheet.create({
         display:'flex',
         justifyContent:'center',
         alignItems:'center'
+    },
+    menuContainerOptions:{
+        width:'90%',
+        height:'95%',
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'column',
+        alignItems:'center'
+    },
+    menuTopInformation:{
+        width:'100%',
+        height:'20%'
+    },
+    menuTopInformationName:{
+        width:'auto',
+        height:'auto',
+        fontSize:24,
+        color:'#ffffff'
+    },
+    menuMainOptionsContainer:{
+        width:'100%',
+        height:'76%',
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'column',
+        alignItems:'center'
+    },
+    menuScrollOptions:{
+        width:'100%',
+        rowGap:15,
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
+    menuItemDisplayed:{
+        width:230,
+        height:40,
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'flex-start'
     }
 })
 export default homeStyles
