@@ -287,7 +287,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
-        borderBottomWidth:2,
+        borderBottomWidth:1,
         borderBottomColor:'#cccccc',
         backgroundColor:'#f4f4f4'
     },
@@ -347,14 +347,13 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
         alignItems:'center',
     },
     checkboxBase: {
-        width: 45,
-        height: 45,
+        width: 35,
+        height: 35,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 4,
-        borderWidth: 2,
-        borderColor: '#000000',
-        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: '#000000a03',
+        backgroundColor: '#efefef',
       },
       checkboxChecked: {
         backgroundColor: '#075b99',

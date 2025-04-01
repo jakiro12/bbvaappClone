@@ -4,13 +4,13 @@ import { router } from "expo-router"
 import React, { useContext, useEffect, useState } from "react"
 import { TransferData } from "@/constants/stateType"
 import { BankContext } from "@/app/_layout"
+import { useHandleInputChange } from "@/app/custom-funcs/handle-inputs-func"
 
 const AmountOfMoneyToSend=()=>{
     const {newTransfer,setNewTransfer }: any = useContext(BankContext);
     const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
-    const handleAmountNumberChange = (text: string) => {
-        setNewTransfer((prev:TransferData) => ({ ...prev, amount_to_send: text }));
-        };
+    const { handleInputChange } = useHandleInputChange(); 
+       
     useEffect(() => {
             const keyboardDidShowListener = Keyboard.addListener(
               "keyboardDidShow",
@@ -52,7 +52,7 @@ const AmountOfMoneyToSend=()=>{
                             </View>
                             <View style={[styles.resumeInputBoxAmount,{position:'relative',borderBottomColor:newTransfer.amount_to_send.length > 0 ? '#000000bd' : '#efefef',borderBottomWidth:2}]}>
                                 <TextInput 
-                                    onChangeText={handleAmountNumberChange}
+                                    onChangeText={(text)=>handleInputChange("amount_to_send",text)}
                                     style={{width:'90%',height:'100%',paddingLeft:15}}
                                     placeholder="Importe"
                                     keyboardType="number-pad"

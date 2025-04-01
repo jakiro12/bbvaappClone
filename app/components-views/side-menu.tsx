@@ -1,6 +1,7 @@
 import React from "react"
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import styles from '../../styles/home-styles'
+import { FontAwesome } from "@expo/vector-icons"
 interface ChildProps{
     onCloseMenu:React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -10,7 +11,7 @@ const SideMenuOptions:React.FC<ChildProps>=({onCloseMenu})=>{
             
             <View style={styles.menuTopInformation}>
                 <Text style={styles.menuTopInformationName}>Aranza Castillo Blanqueto</Text>
-                <TouchableOpacity>
+                <TouchableOpacity style={{width:'auto',height:'auto',marginTop:10}}>
                     <Text style={{fontSize:16,color:'#55aee8'}}>Perfil</Text>
                 </TouchableOpacity>
             </View>
@@ -72,9 +73,10 @@ const SideMenuOptions:React.FC<ChildProps>=({onCloseMenu})=>{
                     </View>    
                 </ScrollView>
                 <TouchableOpacity
-                    style={{height:50,width:'100%',borderColor:'#000000',borderWidth:1,display:'flex',justifyContent:'center',alignItems:'center'}}
+                    style={{height:50,width:'90%',display:'flex',justifyContent:'flex-start',alignItems:'center',flexDirection:'row'}}
                 onPress={()=>onCloseMenu(false)}
                 >
+                <FontAwesome name="arrow-circle-left" size={24} color="#ffec20" style={{marginRight:10}}/>
                 <Text style={{color:'#ffec20',fontSize:16}}>Salir</Text>
             </TouchableOpacity>
             </View>

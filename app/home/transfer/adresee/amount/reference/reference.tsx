@@ -4,13 +4,14 @@ import styles from '../../../../../../styles/home-options'
 import { BankContext } from "@/app/_layout";
 import { useContext, useEffect, useState } from "react";
 import { TransferData } from "@/constants/stateType";
+import { useHandleInputChange } from "@/app/custom-funcs/handle-inputs-func";
 
 const AddReference=()=>{
     const {newTransfer,setNewTransfer }: any = useContext(BankContext);
     const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);    
-    const handleInputChange = (key: keyof TransferData, value: string | boolean) => {
-            setNewTransfer((prev: TransferData) => ({ ...prev, [key]: value }))
-          }   
+    const { handleInputChange } = useHandleInputChange(); 
+    
+    
     useEffect(() => {
         const keyboardDidShowListener = Keyboard.addListener(
           "keyboardDidShow",

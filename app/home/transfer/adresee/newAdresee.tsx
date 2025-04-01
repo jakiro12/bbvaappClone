@@ -3,6 +3,7 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from '../../../../styles/home-options'
 import { BankContext } from "@/app/_layout"
 import { TransferData } from "@/constants/stateType"
+import { useHandleInputChange } from "@/app/custom-funcs/handle-inputs-func"
 
 interface NewAdreseeProps{
     setAdreseeStatus:(value:string | null)=> void
@@ -10,8 +11,10 @@ interface NewAdreseeProps{
 
 const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
     const {newTransfer,setNewTransfer }: any = useContext(BankContext);
+    const { handleInputChange } = useHandleInputChange(); 
+
     const handleAccountNumberChange = (text: string) => {
-        setNewTransfer((prev:TransferData) => ({ ...prev, account_number: text }));
+        handleInputChange("account_number",text)
       };
     const cleanAccountNumberChange = () => {
         setNewTransfer((prev:TransferData) => ({ ...prev, account_number: "" }));
@@ -32,13 +35,14 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                     Ingresa el numero de cuenta, CABLE, tarjeta o celular del beneficiario
                 </Text>
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
-                    <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}]}>
+                    <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4',position:'relative'}]}>
                         <TextInput
                             style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
                             keyboardType="number-pad"
                             value={newTransfer.account_number}
                             onChangeText={handleAccountNumberChange} 
-                            placeholder="ingresar"/>
+                            placeholder="Cuenta, CLABE, tarjeta..."/>
+                        <Text style={{width:'auto',height:'auto',position:'absolute',left:80,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff0000f1' : '#cccccc'}}>{ newTransfer.account_number.length >= 1 ? 'Cuenta, CLABE, tarjeta...' : ''}</Text>
                         <View style={{width:'25%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
                             <TouchableOpacity 
                                 onPress={cleanAccountNumberChange}

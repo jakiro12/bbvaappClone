@@ -5,18 +5,17 @@ import { Pressable } from "react-native"
 import { AntDesign, Ionicons } from "@expo/vector-icons"
 import { router } from "expo-router"
 import { BankContext } from "@/app/_layout"
-import { TransferData } from "@/constants/stateType"
 import { Modal } from "react-native"
+import { useHandleInputChange } from "@/app/custom-funcs/handle-inputs-func"
 interface CheckAdreseeProps{
     setAdreseeStatus:(value:string | null)=> void
 }
 const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
     const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
-    const {newTransfer,setNewTransfer }: any = useContext(BankContext);
-    const handleInputChange = (key: keyof TransferData, value: string | boolean) => {
-        setNewTransfer((prev: TransferData) => ({ ...prev, [key]: value }))
-      }    
+    const {newTransfer}: any = useContext(BankContext);
+    const { handleInputChange } = useHandleInputChange(); 
+     
       const handleSelectBank = (bankName: string) => {
         handleInputChange("bank_name", bankName);
         setModalVisible(false);
@@ -66,7 +65,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                     onPress={()=>setModalVisible(true)}
                     style={styles.inputViewForAddNewAdreseeData}>
                     <Text style={{marginLeft:10}}>{newTransfer.bank_name.length === 0 ? "Banco/Entidad" : newTransfer.bank_name}</Text>
-                    <AntDesign name="down" size={24} color="black" style={{marginRight:20}}/>
+                    <AntDesign name="down" size={24} color="#004481" style={{marginRight:20}}/>
                 </TouchableOpacity>
                 <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor:newTransfer.adresee_name.length > 0 ? '#000000bd' : '#cccccc'}]}>
                      <TextInput
@@ -86,7 +85,7 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                         aria-checked={newTransfer.save_data}
                         style={[styles.checkboxBase, newTransfer.save_data && styles.checkboxChecked]}
                         onPress={() => handleInputChange("save_data",!newTransfer.save_data)}>
-                        {newTransfer.save_data && <Ionicons name="checkmark" size={40} color="white" />}
+                        {newTransfer.save_data && <Ionicons name="checkmark" size={30} color="white" />}
                  </Pressable>
                  <View style={{width:'70%',marginLeft:10,height:'auto'}}>
                     <Text style={{fontSize:20}}>
