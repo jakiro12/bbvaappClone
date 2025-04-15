@@ -32,7 +32,7 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
             </View>
             <View style={styles.boxAddNewAdreseeInfo}>
                 <Text>
-                    Ingresa el numero de cuenta, CABLE, tarjeta o celular del beneficiario
+                    Ingresa el numero de cuenta, CLABE, tarjeta o celular del beneficiario
                 </Text>
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4',position:'relative'}]}>

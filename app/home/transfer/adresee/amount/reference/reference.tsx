@@ -50,7 +50,7 @@ const AddReference=()=>{
                                 <Text style={{fontSize:18,fontWeight:'bold'}}>CONCEPTO</Text>
                                 <Text style={styles.currentPositionText}>(4 de 4)</Text>
                             </View>
-                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.reference.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
+                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.reference.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2,position:'relative'}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("reference", text)} 
                                     style={{width:'90%',height:'100%'}}
@@ -64,8 +64,9 @@ const AddReference=()=>{
                                       style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
                                       <Image source={require('../../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  newTransfer.reference.length > 0 ? '#004481' : '#efefef'}} resizeMode="cover"/>
                                 </TouchableOpacity>
+                                <Text style={{width:'auto',height:'auto',position:'absolute',left:35,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:'#cccccc'}}>{ newTransfer.reference.length >= 1 ? 'Referencia' : ''}</Text>  
                             </View>
-                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.concept.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2}]}>
+                            <View style={[styles.resumeInputBoxAmount,{borderBottomColor:newTransfer.concept.length > 0 ? '#000000bd' : '#cccccc',borderBottomWidth:2,position:'relative'}]}>
                                 <TextInput 
                                     onChangeText={(text) => handleInputChange("concept", text)} 
                                     style={{width:'90%',height:'100%'}}
@@ -79,6 +80,7 @@ const AddReference=()=>{
                                       style={{height:'100%',width:40,display:'flex',justifyContent:'center',alignItems:'center'}}>
                                       <Image source={require('../../../../../../assets/images/x.png')} style={{width:20,height:20,tintColor:  newTransfer.concept.length > 0 ? '#004481' : '#efefef'}} resizeMode="cover"/>
                                 </TouchableOpacity>
+                                <Text style={{width:'auto',height:'auto',position:'absolute',left:35,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:'#cccccc'}}>{ newTransfer.concept.length >= 1 ? 'Concepto' : ''}</Text>  
                             </View>
                             <TouchableOpacity 
                                 activeOpacity={1}

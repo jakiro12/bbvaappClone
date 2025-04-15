@@ -8,7 +8,7 @@ import { BankContext } from "@/app/_layout"
 import { Modal } from "react-native"
 import { useHandleInputChange } from "@/app/custom-funcs/handle-inputs-func"
 interface CheckAdreseeProps{
-    setAdreseeStatus:(value:string | null)=> void
+    setAdreseeStatus:(value:string | null)=> void 
 }
 const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
     const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
@@ -64,15 +64,16 @@ const CheckifAdreseeExist: React.FC<CheckAdreseeProps>=({setAdreseeStatus})=>{
                     activeOpacity={1}
                     onPress={()=>setModalVisible(true)}
                     style={styles.inputViewForAddNewAdreseeData}>
-                    <Text style={{marginLeft:10}}>{newTransfer.bank_name.length === 0 ? "Banco/Entidad" : newTransfer.bank_name}</Text>
+                    <Text style={{marginLeft:10,color:'#cccccc'}}>{newTransfer.bank_name.length === 0 ? "Banco/Entidad" : newTransfer.bank_name}</Text>
                     <AntDesign name="down" size={24} color="#004481" style={{marginRight:20}}/>
                 </TouchableOpacity>
-                <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor:newTransfer.adresee_name.length > 0 ? '#000000bd' : '#cccccc'}]}>
-                     <TextInput
+                <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor:newTransfer.adresee_name.length > 0 ? '#000000bd' : '#cccccc',position:'relative'}]}>
+                    <TextInput
                         style={{width:'100%',height:'100%'}}
                         value={newTransfer.adresee_name}
                         onChangeText={(text) => handleInputChange("adresee_name", text)} 
                         placeholder="Nombre del destinatario"/>
+                    <Text style={{width:'auto',height:'auto',position:'absolute',left:80,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:'#cccccc'}}>{ newTransfer.adresee_name.length >= 1 ? 'Nombre del destinatario' : ''}</Text>                    
                 </View>
                 <View style={{width:'95%',height:'auto',display:'flex',flexDirection:'row'}}>
                         <Image source={require('../../../../assets/images/alert.png')} resizeMode="cover" style={{width:20,height:20}}/>

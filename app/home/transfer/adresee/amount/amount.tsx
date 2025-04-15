@@ -61,6 +61,7 @@ const AmountOfMoneyToSend=()=>{
                                 {newTransfer.amount_to_send.length > 0 ?
                                 <Image source={require('../../../../../assets/images/dolar.png')} resizeMode="contain" style={styles.priceSymbol}/> : null
                             }
+                                <Text style={{width:'auto',height:'auto',position:'absolute',left:30,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:'#cccccc'}}>{ newTransfer.amount_to_send.length >= 1 ? 'Importe' : ''}</Text>                                                    
                                 <TouchableOpacity 
                                         onPress={cleanAccountNumberChange}
                                         disabled={newTransfer.amount_to_send.length === 0}                
