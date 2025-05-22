@@ -19,7 +19,7 @@ const NewTokenCreated=()=>{
                 <View style={styles.tokenMainInfo}>
                     <Text style={{fontWeight:'bold',textAlign:'center'}}>Tu código de seguridad se generará a través de tu Token móvil de forma automática</Text>
                     <View style={[styles.resumeInputBoxAmount,{borderBottomColor:'#000000',borderBottomWidth:1}]}>
-                        <Text style={{width:'100%',height:'auto',textAlign:'center',fontWeight:'bold',fontSize:20}}>. . . . . . . </Text>
+                        <Text style={{width:'100%',height:'auto',textAlign:'center',fontWeight:'bold',fontSize:20,letterSpacing:5}}>. . . . . . . </Text>
                     </View>
                 </View>
                 <View style={styles.tokenButtonsContainer}>

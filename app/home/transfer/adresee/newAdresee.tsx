@@ -37,13 +37,13 @@ const AddNewAdresee:React.FC<NewAdreseeProps>=({setAdreseeStatus})=>{
                 <View style={styles.inputBoxAddNewAdreseeInfo}>
                     <View style={[styles.inputViewForAddNewAdreseeData,{borderBottomColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4',position:'relative'}]}>
                         <TextInput
-                            style={{width:'75%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
+                            style={{width:'72%',height:'100%',backgroundColor: newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff00009c' : '#f4f4f4'}}
                             keyboardType="number-pad"
                             value={newTransfer.account_number}
                             onChangeText={handleAccountNumberChange} 
                             placeholder="Cuenta, CLABE, tarjeta..."/>
                         <Text style={{width:'auto',height:'auto',position:'absolute',left:80,top:'15%', transform: [{ translateX: '-50%' }, { translateY: '-50%' }],fontSize:14,color:newTransfer.account_number.length < 12 && newTransfer.account_number.length >= 1 ? '#ff0000f1' : '#cccccc'}}>{ newTransfer.account_number.length >= 1 ? 'Cuenta, CLABE, tarjeta...' : ''}</Text>
-                        <View style={{width:'25%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
+                        <View style={{width:'28%',height:'100%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around'}}>
                             <TouchableOpacity 
                                 onPress={cleanAccountNumberChange}
                                 activeOpacity={1}

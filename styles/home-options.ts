@@ -197,7 +197,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
     },
     resumeInputBoxAmount:{
         width:'100%',
-        height:50,        
+        height:55,        
         display:'flex',
         justifyContent:'flex-start',
         alignItems:'center',
@@ -282,7 +282,7 @@ const homeOptionStyles : HomeOptionProps = StyleSheet.create({
     },
     inputViewForAddNewAdreseeData:{
         width:'100%',
-        height:50,
+        height:55,
         display:'flex',
         flexDirection:'row',
         alignItems:'center',
